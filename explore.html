@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Liked Videos | NEBULA</title>
+    <script src="js/tailwind.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#20201F",
+                        "tertiary-fixed-dim": "#C889F1",
+                        "on-primary-container": "#4F0000",
+                        "secondary": "#FE7E8D",
+                        "on-error-container": "#FFB2B9",
+                        "surface-container-lowest": "#000000",
+                        "tertiary-fixed": "#D697FF",
+                        "tertiary-dim": "#C587EE",
+                        "tertiary-container": "#D394FD",
+                        "on-primary": "#650000",
+                        "on-primary-fixed-variant": "#610000",
+                        "surface-container-highest": "#262626",
+                        "secondary-fixed-dim": "#FFAEB4",
+                        "on-error": "#490013",
+                        "error": "#FF6E84",
+                        "secondary-fixed": "#FFC2C6",
+                        "on-tertiary-fixed": "#2A0044",
+                        "on-tertiary-container": "#4A0671",
+                        "error-dim": "#D73357",
+                        "surface-variant": "#262626",
+                        "inverse-surface": "#FCF9F8",
+                        "surface-container": "#1A1A1A",
+                        "primary-dim": "#EB0002",
+                        "primary-container": "#FF7764",
+                        "on-tertiary-fixed-variant": "#56197D",
+                        "on-secondary-container": "#FFC0C5",
+                        "error-container": "#A70138",
+                        "surface-container-low": "#131313",
+                        "on-secondary-fixed": "#6a0c22",
+                        "on-secondary-fixed-variant": "#912B3C",
+                        "outline-variant": "#484847",
+                        "on-tertiary": "#55187C",
+                        "primary-fixed": "#FF7764",
+                        "on-surface": "#FFFFFF",
+                        "surface-bright": "#2C2C2C",
+                        "tertiary": "#DDA6FF",
+                        "on-secondary": "#570017",
+                        "on-primary-fixed": "#000000",
+                        "secondary-dim": "#F47785",
+                        "outline": "#767575",
+                        "primary": "#FF8E7D",
+                        "on-surface-variant": "#ADAAAA",
+                        "surface": "#0E0E0E",
+                        "secondary-container": "#842133",
+                        "inverse-primary": "#C20001",
+                        "inverse-on-surface": "#565555",
+                        "background": "#0E0E0E",
+                        "primary-fixed-dim": "#FF5B47",
+                        "on-background": "#FFFFFF",
+                        "surface-dim": "#0E0E0E",
+                        "surface-tint": "#FF8E7D"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #0E0E0E;
+            color: #FFFFFF;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(235, 0, 2, 0.2);
+        }
+
+        .glass-blur {
+            backdrop-filter: blur(40px);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background selection:bg-primary-dim selection:text-white">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-2xl bg-gradient-to-b from-neutral-900 to-transparent shadow-[0_4px_30px_rgba(235,0,2,0.08)] flex justify-between items-center px-8 h-20 w-full font-['Epilogue'] tracking-tight">
+        <div class="flex items-center gap-4">
+            <span class="text-2xl italic font-black text-red-600">NEBULA</span>
+        </div>
+        <div class="hidden md:flex flex-1 justify-end items-center gap-8 mr-12">
+            <div class="relative w-full max-w-md">
+                <input
+                    class="w-full bg-surface-container-highest border-none rounded-full px-6 py-2 text-sm focus:ring-2 focus:ring-primary-dim transition-all"
+                    placeholder="Search cinematic library..." type="text" />
+                <span class="material-symbols-outlined absolute right-4 top-2 text-neutral-400"
+                    data-icon="search">search</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <button class="text-neutral-400 hover:text-red-500 transition-colors active:scale-95 duration-200">
+                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                </button>
+                <button class="text-neutral-400 hover:text-red-500 transition-colors active:scale-95 duration-200">
+                    <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                </button>
+                <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-dim">
+                    <img alt="User Profile"
+                        data-alt="Close up portrait of a stylish person with confident expression in cinematic moody lighting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeUD2RyNZPT2jeF0EXP3kVE95gflRWJPZEA8YxDm9t2_Xn0-_dCoathWJ8DgXVUeh9ItIHnKvvS7ROwcTBZvQDBMd4MckvyzD6JIFy3cykng0RKJBXTRyQgwDRNbhuucJu21tWXdp9xd458L0TkMaeDrBC93K9UTLaRWbDJLW7Yr_0sVUYunKMSTFlDGkR1nvlbOedfGAi3jr2ABmu9DNhJ420roKoh3Tro8jqlMQ6D4gmxEBZX4sYV8BUxZiPg9jZyPx9ECroqAo" />
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- SideNavBar -->
+    <aside
+        class="fixed left-0 top-0 h-full w-24 flex flex-col items-center py-8 z-40 bg-neutral-950 border-r border-white/10 font-['Manrope'] font-medium uppercase tracking-[0.2em] text-[10px] gap-10 justify-start">
+        <div class="mb-8">
+            <span class="text-primary-dim material-symbols-outlined scale-150"
+                data-icon="auto_awesome">auto_awesome</span>
+        </div>
+        <div class="flex flex-col gap-10 items-center w-full">
+            <a class="flex flex-col items-center gap-2 text-neutral-500 hover:text-white transition-all active:scale-110 duration-300 group"
+                href="index.html">
+                <span class="material-symbols-outlined scale-110" data-icon="home">home</span>
+                <span>Home</span>
+            </a>
+            <a class="flex flex-col items-center gap-2 text-neutral-500 hover:text-white transition-all active:scale-110 duration-300 group"
+                href="#">
+                <span class="material-symbols-outlined scale-110" data-icon="explore">explore</span>
+                <span>Discovery</span>
+            </a>
+            <a class="flex flex-col items-center gap-2 text-neutral-500 hover:text-white transition-all active:scale-110 duration-300 group"
+                href="#">
+                <span class="material-symbols-outlined scale-110" data-icon="live_tv">live_tv</span>
+                <span>TV Shows</span>
+            </a>
+            <a class="flex flex-col items-center gap-2 text-red-600 border-r-4 border-red-600 pr-1 transition-all active:scale-110 duration-300 group"
+                href="#">
+                <span class="material-symbols-outlined scale-110" data-icon="favorite"
+                    style="font-variation-settings: 'FILL' 1;">favorite</span>
+                <span class="font-bold">Liked</span>
+            </a>
+        </div>
+        <div class="mt-auto flex flex-col gap-10 items-center w-full">
+            <a class="flex flex-col items-center gap-2 text-neutral-500 hover:text-white transition-all group" href="#">
+                <span class="material-symbols-outlined scale-110" data-icon="download">download</span>
+                <span>Downloads</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="ml-24 pt-32 px-12 pb-20">
+        <!-- Header -->
+        <header class="mb-12">
+            <h1 class="text-6xl font-black italic tracking-tighter font-headline mb-4 uppercase">Explore Videos</h1>
+            <div class="flex items-center gap-4 text-neutral-400 text-sm">
+                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]"
+                        data-icon="video_library">video_library</span> 124 Videos</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-neutral-700"></span>
+                <span>Updated 2 hours ago</span>
+            </div>
+        </header>
+        <!-- Filters -->
+        <section class="mb-10 flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+            <button
+                class="px-6 py-2 bg-primary-dim text-white rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_20px_rgba(235,0,2,0.2)]">Recently
+                Liked</button>
+            <button
+                class="px-6 py-2 bg-surface-container-highest/60 backdrop-blur-md text-neutral-300 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors">Most
+                Watched</button>
+            <button
+                class="px-6 py-2 bg-surface-container-highest/60 backdrop-blur-md text-neutral-300 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors">Oldest</button>
+            <button
+                class="px-6 py-2 bg-surface-container-highest/60 backdrop-blur-md text-neutral-300 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors">A-Z</button>
+        </section>
+        <!-- Video Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Video Card 1 -->
+            <div class="group cursor-pointer">
+                <div
+                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                    <img alt="Cinema Still" class="w-full h-full object-cover"
+                        data-alt="Dramatic abstract geometric shapes with deep red and black lighting in a cinematic digital art style"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu0RxYQoe5nDDsXCqw2vvfItIUIR2YnveT28WzEfd64nKWsZL3T7rIAoGUCJtvWNEjELh23G8NdGWY-PVcSn4JgZutiLQynBiX2-NBpsHTW2YEHg3YqITbeBEk2lK5LbjJMabbhOUMHzE2LvGFpIbwFOBGqrjLZuhRQlVMl-0EnyC7ohYp6RhPVX2_S0OtV34Mf0IYF-yLtR4hkt2VPG-GexmtZgOKh7bSh_3rMbVcwKntyhn6Fw8_To62P5ec5ktU1wmAuKOS2OA" />
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
+                        12:45</div>
+                    <!-- Progress Bar -->
+                    <div class="absolute bottom-0 left-0 h-1 bg-neutral-800 w-full">
+                        <div class="h-full bg-primary-dim shadow-[0_0_10px_rgba(235,0,2,0.6)]" style="width: 65%;">
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
+                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                    </div>
+                </div>
+                <h3
+                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
+                    THE NEON HORIZON: A CYBERPUNK JOURNEY</h3>
+                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">NEBULA ORIGINALS</p>
+                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
+                    <span>1.2M VIEWS</span>
+                    <span class="mx-2 text-neutral-700">•</span>
+                    <span>2 DAYS AGO</span>
+                </div>
+            </div>
+            <!-- Video Card 2 -->
+            <div class="group cursor-pointer">
+                <div
+                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                    <img alt="Cinema Still" class="w-full h-full object-cover"
+                        data-alt="Stunning aerial view of mountain peaks at sunset with orange and deep blue hues, cinematic wide shot"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyhdEmAg85tzWofmm0OdhTxL5NpFwjXtc_zrc2iDF7aVpEhYb6ZrJT2_aguG4kEB21fxhcVF8V_iXihpG8QJkvFs28wjJt7pq82JDI8TRnzRrLAm9VwDiXHIt-_GXDC5EUU4kVO8tTV4Y1AMw7MmV4a1xQYm4SoAuVTqwX6TbKJWb-RoFYGogb32h27IvNZJypQaqBWGqv_9uygmjF2vWikCvbffr1QzLYT9yzHZ68_wI1miMUo2aAXVJ4gfeAVMHMFDKTXKhfJR0" />
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
+                        45:10</div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
+                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                    </div>
+                </div>
+                <h3
+                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
+                    BEYOND THE PEAK: CINEMATIC WILDERNESS</h3>
+                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">EARTH VISION</p>
+                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
+                    <span>890K VIEWS</span>
+                    <span class="mx-2 text-neutral-700">•</span>
+                    <span>1 WEEK AGO</span>
+                </div>
+            </div>
+            <!-- Video Card 3 -->
+            <div class="group cursor-pointer">
+                <div
+                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                    <img alt="Cinema Still" class="w-full h-full object-cover"
+                        data-alt="High tech computer components with glowing red neon lights in a futuristic lab setting, dark mood"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgVSOylpbKQYVfFGtBvFdyqsAQiHzhLvmMAC3TGDCWF6s-OJ8Bnz5BlohzY4npLn3t9LXErwxzulki2kSIJgKmR3j3oeT5pX182tZ4luuAqEF-wEW_wuDjj_G_kBkNHJ5U7M1JmVcsEfjglIWE8IqviNGq4Su9XerY-G0NkrUaSBuFOoWvqfthlAnJ28HsgwKw6C7sSNaoycK6Q7m_knKQc25De3BtLUfhqBiEl1rvh0Awcg2QA8o97JK-ezwPjSJQTv6fAjyV6B8" />
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
+                        08:22</div>
+                    <div class="absolute bottom-0 left-0 h-1 bg-neutral-800 w-full">
+                        <div class="h-full bg-primary-dim shadow-[0_0_10px_rgba(235,0,2,0.6)]" style="width: 20%;">
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
+                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                    </div>
+                </div>
+                <h3
+                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
+                    FUTURE TECH: THE QUANTUM REVOLUTION</h3>
+                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">TECH INSIDER</p>
+                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
+                    <span>3.4M VIEWS</span>
+                    <span class="mx-2 text-neutral-700">•</span>
+                    <span>3 WEEKS AGO</span>
+                </div>
+            </div>
+            <!-- Video Card 4 -->
+            <div class="group cursor-pointer">
+                <div
+                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                    <img alt="Cinema Still" class="w-full h-full object-cover"
+                        data-alt="Empty movie theater with glowing screen and dramatic shadows, cinematic atmosphere"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgcIpxqOA6gc-hqE4fn4zJ17fSyb70MTuQAFiWy7JaDMvOeQMWp5nLD1kCLvSeTVw6Ho8ez2GUmuSNz8TaHnpWicArxDeDFP_YNkn5fVQlrVW6OGlwxOni4fybobiT6PryEmBbv3KVQOGZ3bL3-X6JRFMBU0ig-5UZbqKr8U3xiKcvV_YTcVLhaysLtjZC009mUUB-_Cfn88dAOyIWevL0S2j--Ci4_57JOhPggUhPvdGz99cC7Yk87BgaMt3Wb3l_X8F0wqlRuPU" />
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
+                        02:15:00</div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
+                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                    </div>
+                </div>
+                <h3
+                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
+                    THE SILENT SCREEN: DOCUMENTARY</h3>
+                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">CINEMA STUDIES</p>
+                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
+                    <span>150K VIEWS</span>
+                    <span class="mx-2 text-neutral-700">•</span>
+                    <span>1 MONTH AGO</span>
+                </div>
+            </div>
+            <!-- Video Card 5 -->
+            <div class="group cursor-pointer">
+                <div
+                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                    <img alt="Cinema Still" class="w-full h-full object-cover"
+                        data-alt="Abstract colorful light streaks against a dark background, long exposure photography, vibrant reds and purples"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5amm7qJNHtgZEP7WVfI8iuhyt5eYnSqotOx8I6Grr6fzSm4hX2JvpiD7QSzwqwyMNu7vFwvCFdq1bO5HRvdppgearFBiHPkQedccG586xEkcuSOC7OzZcMWK2dd-yPUaCZUZEMoYQBiks_sSQUL38udzSy20HJdf9hT58wGXk0a4bhGebAt4Qda89DNS_l9cJUV0yrmKnWhji8KdMYoIdAiNmVwfKyrbGIcwvreycGYC1s4BbEfsdapOkq1gVGNvAyvh7H3LH2Bc" />
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
+                        05:30</div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
+                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                    </div>
+                </div>
+                <h3
+                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
+                    LIGHTSPEED: AN EXPERIMENTAL FILM</h3>
+                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">VANGUARD ART</p>
+                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
+                    <span>542K VIEWS</span>
+                    <span class="mx-2 text-neutral-700">•</span>
+                    <span>2 MONTHS AGO</span>
+                </div>
+            </div>
+            <!-- Video Card 6 -->
+            <div class="group cursor-pointer">
+                <div
+                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                    <img alt="Cinema Still" class="w-full h-full object-cover"
+                        data-alt="Extreme close up of a human eye reflecting a digital landscape with matrix-like codes, sci-fi aesthetic"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaQPejWvk-2r2H-eMuYnCkE4Z7j5H0kK1h3747YNpor6kVCYdazUqftnZmy4mr40gcyEn42aWwoHkrtVjQX-Ynnt1TNV1EMlRPup14v1WxIj2Lg74gyK-qxa8OIlQ2Geb655lxXZXnPbmySqtGc7yoMhOsdsDvTjoa1vb-oQfD-Pc1FQ0YxmxAf5xtw0BTv4w797Yk_LhdmB9OHC4tdPCqXNnot7V8vT0ry8-dsf65Jz2Tq71T9tseMaC-eOA9-TQO4zeUA0-DK9Q" />
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
+                        18:05</div>
+                    <div class="absolute bottom-0 left-0 h-1 bg-neutral-800 w-full">
+                        <div class="h-full bg-primary-dim shadow-[0_0_10px_rgba(235,0,2,0.6)]" style="width: 95%;">
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
+                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                    </div>
+                </div>
+                <h3
+                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
+                    PERCEPTION: WHAT IS REALITY?</h3>
+                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">MIND PALACE</p>
+                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
+                    <span>2.1M VIEWS</span>
+                    <span class="mx-2 text-neutral-700">•</span>
+                    <span>3 MONTHS AGO</span>
+                </div>
+            </div>
+            <!-- Video Card 7 -->
+            <div class="group cursor-pointer">
+                <div
+                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                    <img alt="Cinema Still" class="w-full h-full object-cover"
+                        data-alt="Old cinema film reels and projector in a dusty atmospheric room with light beams cutting through the dark"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuClbdPnqC-dX5rjQauI9yripxnuBiP1PnEKwuWFbOHJ_iFfITEoQlDJDBx8ucFwr4YTQlGC6mW6nirRyOfO-VgSjBF54bA1k9i5j-cFFBosSl67jaHRTTBtBkUksAjM-dG1mi7S-gxulLN4BxejpZP7BdXlL5Y5ifJ3keSXllP8OnZWJdG-KG-Oorv8HwBHRaXLD3wIOC7phDTJYw2IsuJsE-udRw2HZcFhFcV4ZsTCAKHFOBjUR1tgfATQN8oxzk8AA6cpCPvHEq4" />
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
+                        14:20</div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
+                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                    </div>
+                </div>
+                <h3
+                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
+                    THE LAST REEL: PRESERVING HISTORY</h3>
+                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">ARCHIVE PROJECT</p>
+                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
+                    <span>95K VIEWS</span>
+                    <span class="mx-2 text-neutral-700">•</span>
+                    <span>4 MONTHS AGO</span>
+                </div>
+            </div>
+            <!-- Video Card 8 -->
+            <div class="group cursor-pointer">
+                <div
+                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                    <img alt="Cinema Still" class="w-full h-full object-cover"
+                        data-alt="Futuristic city skyline at night with massive holographic advertisements and flying vehicles, rain effects"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3WS6m8yJdD1zJ0wi_Nfu9uO2rwCuz1Rmu3hFfcrds4SnxhzRnMA608fwh5MAmCpkJQkrI2Yc4Aye5lraq8fI6EVGzMqdrKLCIE-tzTVSJTDuQgaorK-ijdrXt945rRxHa8tPFgtwasf2avFUFuXRs3HuGbNejf5cfIAIDY6kUNcVYRcLv2dPjz5YvgMSmKcPFWCvigAKekfu036iRsiTtoY61NX44ax5LxYA6mPJrbQYSKVfWR7dPK78Ivvhd0CI61I7lYQw-FXw" />
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
+                        22:12</div>
+                    <div class="absolute bottom-0 left-0 h-1 bg-neutral-800 w-full">
+                        <div class="h-full bg-primary-dim shadow-[0_0_10px_rgba(235,0,2,0.6)]" style="width: 45%;">
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
+                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                    </div>
+                </div>
+                <h3
+                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
+                    METROPOLIS 2099: URBAN EVOLUTION</h3>
+                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">CITY OF FUTURE</p>
+                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
+                    <span>4.7M VIEWS</span>
+                    <span class="mx-2 text-neutral-700">•</span>
+                    <span>5 MONTHS AGO</span>
+                </div>
+            </div>
+        </section>
+        <!-- Pagination / Load More -->
+        <div class="mt-16 flex justify-center">
+            <button
+                class="px-10 py-4 border border-white/10 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all active:scale-95">
+                Load More Content
+            </button>
+        </div>
+    </main>
+    <!-- Contextual FAB (Hidden on Liked Videos per Suppression Rules) -->
+</body>
+
+</html>
