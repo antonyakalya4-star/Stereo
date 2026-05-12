@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Crimson - My List</title>
+    <script src="js/tailwind.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#6a0c22",
+                        "on-background": "#FFFFFF",
+                        "tertiary-fixed": "#D697FF",
+                        "outline": "#767575",
+                        "tertiary-container": "#D394FD",
+                        "error": "#FF6E84",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-fixed-dim": "#C889F1",
+                        "secondary-dim": "#F47785",
+                        "error-container": "#A70138",
+                        "surface-dim": "#0E0E0E",
+                        "on-tertiary-fixed": "#2A0044",
+                        "on-secondary-container": "#FFC0C5",
+                        "background": "#0E0E0E",
+                        "tertiary": "#DDA6FF",
+                        "primary-fixed-dim": "#FF5B47",
+                        "surface-container-highest": "#262626",
+                        "surface-container-high": "#20201F",
+                        "on-primary-fixed-variant": "#610000",
+                        "error-dim": "#D73357",
+                        "tertiary-dim": "#C587EE",
+                        "on-surface-variant": "#ADAAAA",
+                        "surface-container-lowest": "#000000",
+                        "on-tertiary": "#55187C",
+                        "on-secondary-fixed-variant": "#912B3C",
+                        "secondary-fixed": "#FFC2C6",
+                        "surface-bright": "#2C2C2C",
+                        "inverse-primary": "#C20001",
+                        "primary": "#FF8E7D",
+                        "surface-tint": "#FF8E7D",
+                        "surface-container": "#1A1A1A",
+                        "inverse-surface": "#FCF9F8",
+                        "secondary-fixed-dim": "#FFAEB4",
+                        "surface": "#0E0E0E",
+                        "on-error": "#490013",
+                        "inverse-on-surface": "#565555",
+                        "on-error-container": "#FFB2B9",
+                        "on-primary-container": "#4F0000",
+                        "on-secondary": "#570017",
+                        "outline-variant": "#484847",
+                        "on-tertiary-container": "#4A0671",
+                        "secondary": "#FE7E8D",
+                        "primary-fixed": "#FF7764",
+                        "surface-variant": "#262626",
+                        "primary-container": "#FF7764",
+                        "secondary-container": "#842133",
+                        "surface-container-low": "#131313",
+                        "on-surface": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#56197D",
+                        "primary-dim": "#EB0002",
+                        "on-primary": "#650000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "display": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0E0E0E;
+            color: #FFFFFF;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(40px);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glow-primary {
+            box-shadow: 0 0 20px rgba(235, 0, 2, 0.2);
+        }
+
+        .cinematic-gradient {
+            background: linear-gradient(to bottom, transparent 0%, rgba(14, 14, 14, 0.8) 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background selection:bg-primary-dim selection:text-white">
+    <!-- TopNavBar Shell -->
+  <nav
+    class="fixed top-0 w-full z-50 h-20 bg-neutral-950/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(235,0,2,0.08)] flex justify-between items-center px-6 md:px-12 no-line-rule surface-transition">
+    <div class="flex items-center gap-12">
+      <a href="index.html">
+        <img src="img/Stereo-logo.png" alt="">
+      </a>
+      <div class="hidden md:flex gap-8 font-['Manrope'] text-sm tracking-widest uppercase">
+        <a class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Home</a>
+        <a href="explore.html" class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Explore</a>
+        <a href="channels.html" class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Channels</a>
+        <a href="library.html" class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Library</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="hidden lg:flex items-center bg-surface-container-highest px-4 py-2 rounded-full gap-3">
+        <span class="material-symbols-outlined text-neutral-400 text-lg">search</span>
+        <input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-white placeholder-neutral-500"
+          placeholder="Search streams..." type="text" />
+      </div>
+      <div class="flex items-center gap-4 text-white">
+        <span class="material-symbols-outlined hover:text-[#EB0002] cursor-pointer">notifications</span>
+        <span class="material-symbols-outlined hover:text-[#EB0002] cursor-pointer">account_circle</span>
+      </div>
+    </div>
+  </nav>
+  <!-- SideNavBar Shell (Desktop Only) -->
+  <aside
+    class="hidden md:flex fixed left-0 top-0 h-screen w-20 z-40 bg-[#0E0E0E] flex-col items-center py-24 gap-8 bg-gradient-to-r from-[#1A1A1A] to-transparent flat no shadows">
+    <div class="flex flex-col items-center gap-1 mb-12">
+    </div>
+    <div class="flex flex-col gap-10">
+      <a class="flex flex-col items-center gap-2 group text-[#808080] "
+        href="index.html">
+        <span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform duration-200"
+          style="font-variation-settings: 'FILL' 1;">home</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Home</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-neutral-500 hover:text-white hover:scale-110 transition-all duration-200"
+        href="movies.html">
+        <span class="material-symbols-outlined text-2xl">movie</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Movies</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-neutral-500 hover:text-white hover:scale-110 transition-all duration-200"
+        href="series.html">
+        <span class="material-symbols-outlined text-2xl">tv</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Series</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-[#EB0002] border-r-4 border-[#EB0002] pr-2 shadow-[0_0_20px_rgba(235,0,2,0.2)]"
+        href="list.html">
+        <span class="material-symbols-outlined text-2xl">bookmarks</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">List</span>
+      </a>
+    </div>
+  </aside>
+    <!-- Main Content Canvas -->
+    <main class="ml-20 pt-28 px-12 pb-20 max-w-[1600px] mx-auto">
+        <!-- Page Header -->
+        <header class="mb-12">
+            <h1 class="font-headline font-extrabold text-5xl tracking-tight mb-8">My List</h1>
+            <!-- Filter Tabs -->
+            <div class="flex gap-4">
+                <button
+                    class="px-8 py-2.5 rounded-full bg-primary-dim text-white font-bold text-sm tracking-wide glow-primary transition-transform active:scale-95">All</button>
+                <button
+                    class="px-8 py-2.5 rounded-full bg-surface-container-highest/60 backdrop-blur-md text-neutral-300 font-semibold text-sm tracking-wide hover:bg-white/10 transition-all">Videos</button>
+                <button
+                    class="px-8 py-2.5 rounded-full bg-surface-container-highest/60 backdrop-blur-md text-neutral-300 font-semibold text-sm tracking-wide hover:bg-white/10 transition-all">Shows</button>
+                <button
+                    class="px-8 py-2.5 rounded-full bg-surface-container-highest/60 backdrop-blur-md text-neutral-300 font-semibold text-sm tracking-wide hover:bg-white/10 transition-all">Movies</button>
+            </div>
+        </header>
+        <!-- Sections -->
+        <div class="space-y-16">
+            <!-- Saved Videos Section -->
+            <section>
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-headline font-bold text-2xl tracking-tight">Saved Videos</h2>
+                    <span class="font-label text-neutral-500 tracking-widest uppercase text-[10px]">12 Items</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Card 1 -->
+                    <div
+                        class="group relative aspect-video rounded-xl overflow-hidden bg-surface-container transition-transform duration-500 hover:scale-[1.03]">
+                        <img alt="Cinematic landscape" class="w-full h-full object-cover"
+                            data-alt="dramatic cinematic wide shot of mist-covered mountains at dusk with cold blue and deep purple tones"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSgyoYyab2Kp7ywEeEs0co6E7GJyN0murrBAZmh6LxSqkRwamLGRd8mYYmIIJkX3qE56JNeMT-GyYt7v-WTSZf2lBf2P9MKyZl_IxgPCVPBOS2ebkWBGy784XD-ILirkuVqyu00JajtJNF5vlDdbqLyQMX-PjuGquDVV6fRq0DlEyE4OijR4UbNWQpvgDm-_ACBAXw2GPS67iWF0XqpJdPD0-CQnGBV-hFV_fctc5GZQfcAy0pGHJlaCmxBvYZWmvbaNhCiCYeta8" />
+                        <div class="absolute inset-0 cinematic-gradient"></div>
+                        <div
+                            class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button
+                                class="p-2 bg-black/60 backdrop-blur-md rounded-full text-white hover:text-primary-dim">
+                                <span class="material-symbols-outlined text-sm">close</span>
+                            </button>
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-black/70 px-2 py-0.5 rounded text-[10px] font-bold font-label">
+                            12:45</div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3
+                                class="font-headline font-bold text-lg leading-tight group-hover:text-primary-dim transition-colors">
+                                The Last Frontier: Echoes of Silence</h3>
+                            <p class="font-body text-xs text-neutral-400 mt-1">Stellar Productions</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="group relative aspect-video rounded-xl overflow-hidden bg-surface-container transition-transform duration-500 hover:scale-[1.03]">
+                        <img alt="Movie scene" class="w-full h-full object-cover"
+                            data-alt="abstract architectural close-up of a neon-lit futuristic building exterior with sharp geometric lines and red glow"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwOpKJVT-H3oqnegZYd9ydw8RgIsAsdyGzjOTwmeCFJ-MoWzrlUDy9cqRQ78FrHOADEzCyZYFi7nYHbd50LiSeQZ8nGF5dGiq4_w3sFTSA3UXALEWbTFs00yzlyDhJVuKm0E54YxXiutvz-abuDoyLzSQD24OryhnCKqI43j2e5YwN91T8LsyT205LS7kbgX4UsX-hQj2IeBvO_PZTQWDCbcDWmv8bmhHLRf5v7icHhX7YSXAvcD8sm_E5SFP0eVKoBtqenS2-h4Q" />
+                        <div class="absolute inset-0 cinematic-gradient"></div>
+                        <div
+                            class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button
+                                class="p-2 bg-black/60 backdrop-blur-md rounded-full text-white hover:text-primary-dim">
+                                <span class="material-symbols-outlined text-sm">close</span>
+                            </button>
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-black/70 px-2 py-0.5 rounded text-[10px] font-bold font-label">
+                            42:10</div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3
+                                class="font-headline font-bold text-lg leading-tight group-hover:text-primary-dim transition-colors">
+                                Neon Genesis: Vol 4</h3>
+                            <p class="font-body text-xs text-neutral-400 mt-1">Cinematic Core</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="group relative aspect-video rounded-xl overflow-hidden bg-surface-container transition-transform duration-500 hover:scale-[1.03]">
+                        <img alt="Cinema theater" class="w-full h-full object-cover"
+                            data-alt="interior shot of a modern dark home theater with ambient red floor lighting and plush seating"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDso1BmgMl6MRjKVbv5jdgUBk7AOPJUASaZg4PqWVOXtYju_ga86Npbp9Wquvg1lzPNKeLQSGWBb_35ZY8AUb-rckxCM0hyunWeXdduAyvPbNXgcEjUpXiNICb1o64dHeCCYToOKRXjHJvurRa5VGFy3rX5IdKWuNjsUnW5e1t2MjRSgluQqaujxogQ4-vaeociJif-d51wwpmIx00QB-wClTRd-nDI_94mrXD1QppEcTV0omisQUR83eGz7gKbwjcuOszYgUuJ420" />
+                        <div class="absolute inset-0 cinematic-gradient"></div>
+                        <div
+                            class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button
+                                class="p-2 bg-black/60 backdrop-blur-md rounded-full text-white hover:text-primary-dim">
+                                <span class="material-symbols-outlined text-sm">close</span>
+                            </button>
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-black/70 px-2 py-0.5 rounded text-[10px] font-bold font-label">
+                            1:24:00</div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3
+                                class="font-headline font-bold text-lg leading-tight group-hover:text-primary-dim transition-colors">
+                                Origins of Noir</h3>
+                            <p class="font-body text-xs text-neutral-400 mt-1">Director's Cut</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="group relative aspect-video rounded-xl overflow-hidden bg-surface-container transition-transform duration-500 hover:scale-[1.03]">
+                        <img alt="Filmmaking" class="w-full h-full object-cover"
+                            data-alt="vintage film projector lens capturing light rays in a smoky room with cinematic dust particles"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe6x5InOncZAsBJvLE3ajNL3l6ZtG2uBZIQBmIN2mkfzDiaZGsa2yaNcN4DksfWv_XvFw-9rsaa80lUhztXXrlBWVL3KgNpcKpowtSzZUDNtue2whlh_aiO6EHPmb8XQZ9WzkNA96OSeEPhQ04DMbMlluZ8Qc7XQQp7Z01kbACfbW38md77lkBNbS2-Pkx6C2ca_0hfRFBdblu0ZmnZRc_KJKEwMc2W53qhd8nPUeRKo8mEDsnU6cZry4WPeTLw0AgHBXVhYwhDd8" />
+                        <div class="absolute inset-0 cinematic-gradient"></div>
+                        <div
+                            class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button
+                                class="p-2 bg-black/60 backdrop-blur-md rounded-full text-white hover:text-primary-dim">
+                                <span class="material-symbols-outlined text-sm">close</span>
+                            </button>
+                        </div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-black/70 px-2 py-0.5 rounded text-[10px] font-bold font-label">
+                            08:50</div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3
+                                class="font-headline font-bold text-lg leading-tight group-hover:text-primary-dim transition-colors">
+                                The Analog Dream</h3>
+                            <p class="font-body text-xs text-neutral-400 mt-1">Retro Vision</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Watch Later Section -->
+            <section>
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-headline font-bold text-2xl tracking-tight">Watch Later</h2>
+                    <span class="font-label text-neutral-500 tracking-widest uppercase text-[10px]">4 Items</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Card 5 -->
+                    <div
+                        class="group relative aspect-video rounded-xl overflow-hidden bg-surface-container transition-transform duration-500 hover:scale-[1.03]">
+                        <img alt="Cyberpunk city" class="w-full h-full object-cover"
+                            data-alt="vibrant cyberpunk cityscape with neon signs in japanese characters and rainy streets reflecting pink and blue light"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHnipb0Nslf_mEIO94H15OMGYgA2lfQJGVF44rKVWfkkLhIIjFei5OUH-pwozV_5F4VuePX0kuGo48VTMYP-aUBkYQoTXIVQhu6P9QcKNfkhV_waAKDj28PC-8X0HFucZUzK8vTBaO8r1ErAgqCZ1FaOsE-9eIztet8sm9tij1VpT_0A20fCxVyYbL0NYl6_9qVtLrf8YrWQDXZAslzo2XIdZvq8qlb8Z3w9nw0SUi9fMNhH8lIulRazYrHeDCcCfGiWMi6GBotcY" />
+                        <div class="absolute inset-0 cinematic-gradient"></div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-black/70 px-2 py-0.5 rounded text-[10px] font-bold font-label">
+                            2:15:30</div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3
+                                class="font-headline font-bold text-lg leading-tight group-hover:text-primary-dim transition-colors">
+                                Midnight Protocol</h3>
+                            <p class="font-body text-xs text-neutral-400 mt-1">Cyber Media</p>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div
+                        class="group relative aspect-video rounded-xl overflow-hidden bg-surface-container transition-transform duration-500 hover:scale-[1.03]">
+                        <img alt="Abstract space" class="w-full h-full object-cover"
+                            data-alt="deep space nebula with swirling clouds of red gas and bright pinprick stars against the black void"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbE_cQm38yZzjiFHI2edNkttVHku8CdOboCA4uF9QV-HmjnPGJPXJ68Pkn7C1R0vt2elbkokAbuoMJ_Qm7hDDt5br5MzJXGuA8dbT8nehYpdo5hADwz8ZlfyhrtZ96BxmZ8dyte-XmJhMNL_TI9lo4sP987Mp67li-ndfcBzkeEuRpPvSWxlJenvWltlgNwLT_-_cWlpOGVrsMdS9eY8xaMDCB_81oj8Cv7TDBFBBpgMpPKDHnXWPS2jyTEZo9Uk3qPMWAr76BNK4" />
+                        <div class="absolute inset-0 cinematic-gradient"></div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-black/70 px-2 py-0.5 rounded text-[10px] font-bold font-label">
+                            15:00</div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3
+                                class="font-headline font-bold text-lg leading-tight group-hover:text-primary-dim transition-colors">
+                                Beyond the Nebula</h3>
+                            <p class="font-body text-xs text-neutral-400 mt-1">Astrosound</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Favorite Content Section (Asymmetric Bento Grid) -->
+            <section>
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-headline font-bold text-2xl tracking-tight">Favorite Content</h2>
+                    <span class="font-label text-neutral-500 tracking-widest uppercase text-[10px]">Spotlight</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-[500px]">
+                    <div
+                        class="md:col-span-2 md:row-span-2 group relative rounded-xl overflow-hidden bg-surface-container transition-transform duration-500 hover:scale-[1.01]">
+                        <img alt="Cinematic production"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="professional film crew working on a dark set with large softbox lighting and high-end camera equipment"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT-a0WaskKwKrIDys5I7auj2XoU1H2GE2n0ADpsxdCfZ4Hyt_uya7iQb7Fxvp0pkVJuUGOcU2PdIyKmh-OfvCWM_Uxx9asjcGimmTREcqKSKwuZTCyFfrveW3QNdtWx0PVWzpqm3JOXujOsbsQkRJUWlKRP-41TaEy4ZsK_52_aQ3GCJvW9IVZjBDApA-Y5uGAG1kjEvwiGytrh5Sy456VEkx3cxtdYJRmec9A7NgnJDgOABORPnn0z80bgEodlK_pyLFsjhonsVU" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-8 left-8 right-8">
+                            <span
+                                class="px-3 py-1 bg-primary-dim text-white text-[10px] font-bold font-label uppercase tracking-widest rounded-full mb-4 inline-block glow-primary">Featured
+                                Favorite</span>
+                            <h3 class="font-headline font-extrabold text-4xl tracking-tight">The Director's Vision:
+                                Masterclass Series</h3>
+                            <p class="font-body text-sm text-neutral-300 mt-2 max-w-lg">Go behind the scenes of the
+                                world's most iconic cinematic masterpieces in this exclusive series.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative rounded-xl overflow-hidden bg-surface-container transition-transform duration-500 hover:scale-[1.02]">
+                        <img alt="Urban night" class="w-full h-full object-cover"
+                            data-alt="aerial view of a bustling city at night with light trails from cars and glowing skyscrapers"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKhQbTw7qYhnXiiXPpTWLwFutpObQvaW3IAPjDr4Iqd_lXNbBDlfCwlCVL_g1ffBayG_uscRcpxuA_MJBD0soVM0_X1owJq0KeHQLVGXBRQyxSMwnPCpLGWAuIVMrYuw-OGnpHvQREsLcNOAGCBJMXs_mNu-Msr--ifg2LrFjLmc0orHNPXH_wZLsgVVW1GDIVdi4mNL1lRjbXaLr8MOZNLWyxqEcxfOs3Nk-fOkRn4-DJU0u1irMDjvv13AG80aXLC8ZvX04GwKE" />
+                        <div class="absolute inset-0 cinematic-gradient"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="font-headline font-bold text-lg group-hover:text-primary-dim transition-colors">
+                                Urban Pulse</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative rounded-xl overflow-hidden bg-surface-container transition-transform duration-500 hover:scale-[1.02]">
+                        <img alt="Nature cinematic" class="w-full h-full object-cover"
+                            data-alt="close-up of water droplets on a lush green leaf with soft natural sunlight filtering through trees"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBttTVNDHHJOnru1HqG2aOo42SPstJRdMlLdvFl8-deVjTogBtSuubfAnjLTK8f5Ka2fHxsS1YwW1rLtczCGPOCK7f0AqrGQvUyhxQTuGwg_OI1NFqqKmgRpPXcw8Y1ubw2B2sOJxG_uqjqYDCorq82GPoJ92hx-K5AT851xLtVkKXqZ0o1c7-kjky5rq2dIYa2Vonk6MlrnMDK507U6nZSetmQT_XGIGlrKJNsXioFuVMZgBnfgze2lae_Zzz7q3R5VR5ENnQcKr8" />
+                        <div class="absolute inset-0 cinematic-gradient"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="font-headline font-bold text-lg group-hover:text-primary-dim transition-colors">
+                                Macro World</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Mobile Bottom Nav -->
+    <nav
+        class="md:hidden fixed bottom-0 w-full bg-neutral-950/90 backdrop-blur-2xl px-6 py-4 flex justify-between items-center z-50 border-t border-white/5">
+        <a class="text-neutral-500 flex flex-col items-center gap-1" href="#">
+            <span class="material-symbols-outlined">home</span>
+        </a>
+        <a class="text-neutral-500 flex flex-col items-center gap-1" href="#">
+            <span class="material-symbols-outlined">explore</span>
+        </a>
+        <a class="text-primary-dim flex flex-col items-center gap-1" href="#">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bookmarks</span>
+        </a>
+        <a class="text-neutral-500 flex flex-col items-center gap-1" href="#">
+            <span class="material-symbols-outlined">download</span>
+        </a>
+        <a class="text-neutral-500 flex flex-col items-center gap-1" href="#">
+            <span class="material-symbols-outlined">person</span>
+        </a>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Channels - STEREO</title>
+   <script src="js/tailwind.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#842133",
+                        "primary-dim": "#EB0002",
+                        "on-secondary-fixed": "#6a0c22",
+                        "on-background": "#FFFFFF",
+                        "tertiary-container": "#D394FD",
+                        "on-surface-variant": "#ADAAAA",
+                        "secondary-fixed-dim": "#FFAEB4",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-fixed": "#D697FF",
+                        "tertiary": "#DDA6FF",
+                        "primary-fixed-dim": "#FF5B47",
+                        "surface-bright": "#2C2C2C",
+                        "surface-container-high": "#20201F",
+                        "inverse-on-surface": "#565555",
+                        "surface-container-lowest": "#000000",
+                        "on-primary-fixed-variant": "#610000",
+                        "surface-dim": "#0E0E0E",
+                        "primary-container": "#FF7764",
+                        "outline-variant": "#484847",
+                        "on-tertiary-fixed": "#2A0044",
+                        "on-surface": "#FFFFFF",
+                        "surface-container": "#1A1A1A",
+                        "error-dim": "#D73357",
+                        "on-primary": "#650000",
+                        "surface": "#0E0E0E",
+                        "on-primary-container": "#4F0000",
+                        "inverse-surface": "#FCF9F8",
+                        "secondary": "#FE7E8D",
+                        "on-secondary": "#570017",
+                        "outline": "#767575",
+                        "on-error-container": "#FFB2B9",
+                        "on-tertiary-container": "#4A0671",
+                        "tertiary-fixed-dim": "#C889F1",
+                        "tertiary-dim": "#C587EE",
+                        "error": "#FF6E84",
+                        "on-tertiary-fixed-variant": "#56197D",
+                        "on-error": "#490013",
+                        "surface-variant": "#262626",
+                        "inverse-primary": "#C20001",
+                        "secondary-fixed": "#FFC2C6",
+                        "surface-container-low": "#131313",
+                        "on-tertiary": "#55187C",
+                        "error-container": "#A70138",
+                        "on-secondary-fixed-variant": "#912B3C",
+                        "secondary-dim": "#F47785",
+                        "surface-container-highest": "#262626",
+                        "on-secondary-container": "#FFC0C5",
+                        "primary": "#FF8E7D",
+                        "surface-tint": "#FF8E7D",
+                        "primary-fixed": "#FF7764",
+                        "background": "#0E0E0E"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "display": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #0E0E0E;
+            color: #FFFFFF;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .glow-primary {
+            box-shadow: 0 0 20px rgba(235, 0, 2, 0.2);
+        }
+
+        .glass-panel {
+            backdrop-filter: blur(40px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0E0E0E;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background">
+      <!-- TopNavBar Shell -->
+  <nav
+    class="fixed top-0 w-full z-50 h-20 bg-neutral-950/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(235,0,2,0.08)] flex justify-between items-center px-6 md:px-12 no-line-rule surface-transition">
+    <div class="flex items-center gap-12">
+      <a href="index.html">
+        <img src="img/Stereo-logo.png" alt="">
+      </a>
+      <div class="hidden md:flex gap-8 font-['Manrope'] text-sm tracking-widest uppercase">
+        <a class="text-neutral-400  hover:text-[#EB0002] transition-colors duration-300"
+          href="index.html">Home</a>
+        <a href="explore.html" class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Explore</a>
+        <a href="channels.html" class="text-neutral-400 hover:text-[#EB0002] border-b-2 border-[#EB0002] transition-colors duration-300" href="#">Channels</a>
+        <a href="library.html" class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Library</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="hidden lg:flex items-center bg-surface-container-highest px-4 py-2 rounded-full gap-3">
+        <span class="material-symbols-outlined text-neutral-400 text-lg">search</span>
+        <input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-white placeholder-neutral-500"
+          placeholder="Search streams..." type="text" />
+      </div>
+      <div class="flex items-center gap-4 text-white">
+        <span class="material-symbols-outlined hover:text-[#EB0002] cursor-pointer">notifications</span>
+        <span class="material-symbols-outlined hover:text-[#EB0002] cursor-pointer">account_circle</span>
+      </div>
+    </div>
+  </nav>
+  <!-- SideNavBar Shell (Desktop Only) -->
+  <aside
+    class="hidden md:flex fixed left-0 top-0 h-screen w-20 z-40 bg-[#0E0E0E] flex-col items-center py-24 gap-8 bg-gradient-to-r from-[#1A1A1A] to-transparent flat no shadows">
+    <div class="flex flex-col items-center gap-1 mb-12">
+    </div>
+    <div class="flex flex-col gap-10">
+      <a class="flex flex-col items-center gap-2 group text-[#808080]"
+        href="#">
+        <span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform duration-200"
+          style="font-variation-settings: 'FILL' 1;">home</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Home</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-neutral-500 hover:text-white hover:scale-110 transition-all duration-200"
+        href="#">
+        <span class="material-symbols-outlined text-2xl">movie</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Movies</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-neutral-500 hover:text-white hover:scale-110 transition-all duration-200"
+        href="#">
+        <span class="material-symbols-outlined text-2xl">tv</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Series</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-neutral-500 hover:text-white hover:scale-110 transition-all duration-200"
+        href="#">
+        <span class="material-symbols-outlined text-2xl">bookmarks</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">List</span>
+      </a>
+    </div>
+  </aside>
+    <!-- Main Content -->
+    <main class="pl-24 pt-24 pb-12 min-h-screen">
+        <div class="max-w-7xl mx-auto px-12">
+            <!-- Header Section -->
+            <div class="mb-12">
+                <h1 class="text-6xl font-black italic tracking-tighter font-display mb-8">Channels</h1>
+                <div class="flex flex-col md:flex-row gap-6 items-center">
+                    <!-- Search & Filter Row -->
+                    <div class="flex flex-wrap gap-3">
+                        <button
+                            class="px-6 py-2 rounded-full bg-primary-dim text-white text-xs font-bold uppercase tracking-widest glow-primary transition-all">All</button>
+                        <button
+                            class="px-6 py-2 rounded-full bg-surface-container-highest/40 hover:bg-surface-container-highest text-neutral-400 hover:text-white text-xs font-bold uppercase tracking-widest transition-all">Tech</button>
+                        <button
+                            class="px-6 py-2 rounded-full bg-surface-container-highest/40 hover:bg-surface-container-highest text-neutral-400 hover:text-white text-xs font-bold uppercase tracking-widest transition-all">Music</button>
+                        <button
+                            class="px-6 py-2 rounded-full bg-surface-container-highest/40 hover:bg-surface-container-highest text-neutral-400 hover:text-white text-xs font-bold uppercase tracking-widest transition-all">Education</button>
+                        <button
+                            class="px-6 py-2 rounded-full bg-surface-container-highest/40 hover:bg-surface-container-highest text-neutral-400 hover:text-white text-xs font-bold uppercase tracking-widest transition-all">Entertainment</button>
+                        <button
+                            class="px-6 py-2 rounded-full bg-surface-container-highest/40 hover:bg-surface-container-highest text-neutral-400 hover:text-white text-xs font-bold uppercase tracking-widest transition-all">Gaming</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Section 1: Subscribed Channels -->
+            <section class="mb-16">
+                <div class="flex justify-between items-end mb-8">
+                    <h2 class="text-2xl font-bold font-headline tracking-tight">Subscribed Channels</h2>
+                    <a class="text-[10px] uppercase tracking-[0.2em] text-primary-dim font-bold hover:underline"
+                        href="#">View All</a>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                    <!-- Channel Item 1 -->
+                    <div class="flex flex-col items-center group text-center">
+                        <div
+                            class="relative w-28 h-28 rounded-full mb-4 p-1 bg-gradient-to-tr from-red-600 to-transparent group-hover:scale-105 transition-transform duration-500">
+                            <img class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="minimalist aesthetic circular avatar of a tech influencer with soft neon red rim lighting on dark background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7R8Om7xyFQGkS4X6-D3DqOYWF4iuU942LYpxVED6VNTXIlKa-LZ5lsqVIBDuN8cszfOHt0sU6mCSfDylY2g9umd4GdqmtNdMs8NfsOedWVUQ-mPEKKqoa0fvFrX_b7L2YaU_EVQFYuloawS3XDoMmnmxk2wKDTPd5zSx8ysyahSIihlhg9lkSn_Gap0XS4TaRgCBwzz9jxX1c86gMR5ZIhP4jSvuMByAAZkkRFmj9by5-fW7JCVEiXdrVcXhdLvTAOkEtkyFqO5E" />
+                        </div>
+                        <h3 class="text-sm font-bold truncate w-full px-2">TechNova</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-neutral-500 mb-3">1.2M Subs</p>
+                        <button
+                            class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] uppercase tracking-widest font-bold hover:bg-white/5 transition-colors">Subscribed</button>
+                    </div>
+                    <!-- Channel Item 2 -->
+                    <div class="flex flex-col items-center group text-center">
+                        <div
+                            class="relative w-28 h-28 rounded-full mb-4 p-1 bg-gradient-to-tr from-red-600 to-transparent group-hover:scale-105 transition-transform duration-500">
+                            <img class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="professional headshot of a smiling educator in a library setting with warm cinematic lighting and bokeh background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFF4ZZLU-rojsgcHJtxmxO_fOPDgJgQpLM_qXa4JIWJIR8rTh-66Bei4UcnUFZ6yUWxPIz-ryOgccxw4ZO61PRdp9JCDRdk8cNCyoe13Tme1nSbMi6857hAJdYXjTZHBttGqW9i63kf2A3OP-WEA9zgR9TqPYxKOqUiki1q4TFUAltAaK3JE79qhASyyRYIG94irruE1RwDPVhjgCK4wPZl4dfktIkMo_ckQ3DjyrxKSOgVxpRFThg_GxezrCbOO8HSV5XykZE-fo" />
+                        </div>
+                        <h3 class="text-sm font-bold truncate w-full px-2">EduStream</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-neutral-500 mb-3">840K Subs</p>
+                        <button
+                            class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] uppercase tracking-widest font-bold hover:bg-white/5 transition-colors">Subscribed</button>
+                    </div>
+                    <!-- Channel Item 3 -->
+                    <div class="flex flex-col items-center group text-center">
+                        <div
+                            class="relative w-28 h-28 rounded-full mb-4 p-1 bg-gradient-to-tr from-red-600 to-transparent group-hover:scale-105 transition-transform duration-500">
+                            <img class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="creative portrait of a woman with headphones against a vibrant purple and red studio light background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4iSoZUNflpJdZ4GpsFYu_75kZDk8OufbyU3Y_JUC-BLxDzQHTRZOm1yL_YpOR3N6JJR_qWdIi5tN3Jd0c68JpUm7Q4pZ7KesR-lrVtWStx-b6kQzh49jIJUzePjBEEd8VPyTF4fGcNeymU6R4k10cNm1BQ8_DmMHJ02eovJXS2gZAv4PLh9FY9HZdER0fue-T4W8qryDEqQdAtbgJwCdkSE35e5J1Dm5MevS-1oSWIYcbgSALzfToDgdVLyKxs0c4PodeEe7TZmk" />
+                        </div>
+                        <h3 class="text-sm font-bold truncate w-full px-2">Sonic Vibes</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-neutral-500 mb-3">2.5M Subs</p>
+                        <button
+                            class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] uppercase tracking-widest font-bold hover:bg-white/5 transition-colors">Subscribed</button>
+                    </div>
+                    <!-- Channel Item 4 -->
+                    <div class="flex flex-col items-center group text-center">
+                        <div
+                            class="relative w-28 h-28 rounded-full mb-4 p-1 bg-gradient-to-tr from-red-600 to-transparent group-hover:scale-105 transition-transform duration-500">
+                            <img class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="energetic gaming creator in front of a colorful RGB led setup with headphones and focused expression"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyweBkTpKWAy8T8XS0P5DpcTRGgyOasEqIHUnMMIlB8zJR3WyQlF9Jss5dkOavqg2lP4-pvu4I_skIeY_XTg60ULCUa9oFlmQLyeeqMB6PbCmQ7i69CmVYIdIBnSXYnv_pzxhJSOXwHpvEgacGJ0b8pl78IzcPv3X-EdBBVHHqenO97MMPBT8IfozukS5KOmRj4w90i6f2imi4-A1fsC97KsHnJEMxOqAmuqzMIxEjxdHkrExLrt0UAFk6lztIj6b3B5T_y4vmHcI" />
+                        </div>
+                        <h3 class="text-sm font-bold truncate w-full px-2">MaxLevel</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-neutral-500 mb-3">4.1M Subs</p>
+                        <button
+                            class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] uppercase tracking-widest font-bold hover:bg-white/5 transition-colors">Subscribed</button>
+                    </div>
+                    <!-- Channel Item 5 -->
+                    <div class="flex flex-col items-center group text-center">
+                        <div
+                            class="relative w-28 h-28 rounded-full mb-4 p-1 bg-gradient-to-tr from-red-600 to-transparent group-hover:scale-105 transition-transform duration-500">
+                            <img class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="fashionable content creator posing in an urban street at night with dramatic shadows and red neon accents"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZqloI3WI9rPlEUAFEWafpq_UOwKPY_xRhicxpE5IjNUVJNutDJ0i7s9QbjZRYMwDynsZ5U6Ezvmtpbtdoe3lcEV1hzN69vW8e9GuwuGFTMJRYgLAvTeeHfP9RrQzeGtvKnLycjeSje1_GMydcivEe4KAtXGnYbuxRb0YwSzgrkJwMQoAMupkjEc2qE3RcOYseykJ79jbHtyi6O3mfPMMUrSCbinbLpgICIH_vsyAI1w45M7TqWjDxuLoWgTK12BVXvbHa3ih52vY" />
+                        </div>
+                        <h3 class="text-sm font-bold truncate w-full px-2">Urban Pulse</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-neutral-500 mb-3">150K Subs</p>
+                        <button
+                            class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] uppercase tracking-widest font-bold hover:bg-white/5 transition-colors">Subscribed</button>
+                    </div>
+                    <!-- Channel Item 6 -->
+                    <div class="flex flex-col items-center group text-center">
+                        <div
+                            class="relative w-28 h-28 rounded-full mb-4 p-1 bg-gradient-to-tr from-red-600 to-transparent group-hover:scale-105 transition-transform duration-500">
+                            <img class="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                data-alt="cinematic close-up portrait of a travel vlogger with warm sunrise light hitting the side of their face"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlpKctvMXNmfphLur8_nj9aSElf2JVpyn3_5OBaSkJ5IdUm4gPxfASoDypTFvYaoLU3rbhwrk0Js-Xj8T0bV920P2R-6QWlQslwKYtfiv93nUflLKsSOOKXptlqSlJ8TkwqDaJi_6Po6dZE-fiDShajAfeRVIDU4Z6Fvv_6VjPpzogs5QU1WBoRRc65j6w3NYIbyPNPA6z_1oPhhkr_0K1JZJ-QTDcYyS6T-XPLmgNUqeyPfehz9FMOmbb3zoQFQ9WARNYj_53g5g" />
+                        </div>
+                        <h3 class="text-sm font-bold truncate w-full px-2">Wanderlust</h3>
+                        <p class="text-[10px] uppercase tracking-widest text-neutral-500 mb-3">920K Subs</p>
+                        <button
+                            class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] uppercase tracking-widest font-bold hover:bg-white/5 transition-colors">Subscribed</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Section 2: Popular Channels -->
+            <section class="mb-16">
+                <div class="flex justify-between items-end mb-8">
+                    <h2 class="text-2xl font-bold font-headline tracking-tight">Popular Channels</h2>
+                    <div class="flex space-x-2">
+                        <button
+                            class="p-2 rounded-full bg-surface-container text-neutral-400 hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button
+                            class="p-2 rounded-full bg-surface-container text-neutral-400 hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Large Card 1 -->
+                    <div
+                        class="group bg-surface-container-low rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-500">
+                        <div class="relative h-40">
+                            <img class="w-full h-full object-cover"
+                                data-alt="abstract flowing liquid metal textures in deep crimson and charcoal black with high contrast lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Z41Q2eFE_yGzpCGZim4_df3DmX0_Kz19Cw0w9jw6Q2ngdk-0m1h7zGymzYkyw3Ou6audibf4jS95vr8Xl7MGnnxsswiWI8XiixdbXxmbsqy-RVFKO9ygHJNyR20W6VNovpH35fUTEU_iz6kGW129i5gwVS0kFKxQpHBenBWuK5BQTAnc0UI523uZQ0z11AL8K6GgmejQQ6zCjx0d1DJ9qJwmNRrYDVYLG7cZ-vQ8a-vSQBAqTmAxHUfQ_U6tXV__DHqdt28u5g8" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent">
+                            </div>
+                            <div class="absolute bottom-4 left-6 flex items-center">
+                                <div
+                                    class="w-16 h-16 rounded-xl border-4 border-surface-container-low overflow-hidden bg-background">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="portrait of a confident female director in a creative studio with soft ambient light"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaep3_24mBgRkVE6pw4y4HqcI9HfDGXM7G7whIc8pRRSqVnfNSEvmuJ2V6y5o9C3FLH3P4xO5jThGDO_GyZYjIIGenLK5i4H-_DFtItNdSPF4BXzW0aonoYruBZMqgbyz38MbplLsgyU1gZfflaTzouX8wN1rYwIT6PMfCg0CFTPFmZtUYR_8wlRin0Q-VvqoUeImOG6o_Qgsgp-w2Jzotoorfk1lttUW4RX-RmFcCL9M6mg8bim4MA9YkC84y0Pp5yyccKhUreI8" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-2">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold group-hover:text-red-600 transition-colors">Studio
+                                        Prime</h3>
+                                    <p class="text-[10px] uppercase tracking-widest text-neutral-500">Digital Art &amp;
+                                        Design</p>
+                                </div>
+                                <p class="text-xs font-bold text-neutral-400">5.2M Subs</p>
+                            </div>
+                            <button
+                                class="w-full py-2.5 rounded-full bg-primary-dim text-white text-xs font-bold uppercase tracking-widest glow-primary hover:bg-red-500 transition-all">Subscribe</button>
+                        </div>
+                    </div>
+                    <!-- Large Card 2 -->
+                    <div
+                        class="group bg-surface-container-low rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-500">
+                        <div class="relative h-40">
+                            <img class="w-full h-full object-cover"
+                                data-alt="rows of vintage server racks and high-tech equipment in a dark data center with glowing red indicators"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5sIJiycY6OOpbgbbDYE1urJtRy0ysaUXoMkhKFRa7wbGrgeSNFvm51b-Udl_zlKuoDcFmOj72-1zdwxBc6P67jpuZ71B-2O6LOcBsz32DA0gh-fWC3PuyzYioDa60daFcaIumBfbf78jKSYR90ldsiMLWgY2oJqs4wRRE9Lj9wF7oBHBJWMCCk4q_MmJGll8mayY3Yr_xctvjvFCJ49QAiNgh1hVOwh_sJ9uYS1qMdfOVFyh58AxXZiMgLKCrS8vYPG0wkY5EjPA" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent">
+                            </div>
+                            <div class="absolute bottom-4 left-6 flex items-center">
+                                <div
+                                    class="w-16 h-16 rounded-xl border-4 border-surface-container-low overflow-hidden bg-background">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="clean minimal portrait of a male hardware engineer in a tech environment with sharp directional lighting"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXpz8PoXoTsHWbNgH2JunQcczUUYscXlt2hJ9-86ua--H5q2Jh_psN_FY5w76KwygUgEhZmM4DNvtf0ziiNS_-zT4mLla2btDjzfgzfYQoreRG8g1IkskxWJl7us2AQGP-GuM-Znux4FIOLryhAwP-P5RsXpYFlP6nCXxk55vbTc2c0yfDhOaIFdrRJ0uvRRbvGS6XZOMroJHoB3XvIx1ZaKl2gMFDpa82Ju89xdtiQyfaA6Nd7jhwCnptzJsLrxZ3AX4SOR4LHqM" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-2">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold group-hover:text-red-600 transition-colors">Hardware HQ
+                                    </h3>
+                                    <p class="text-[10px] uppercase tracking-widest text-neutral-500">Tech Reviews</p>
+                                </div>
+                                <p class="text-xs font-bold text-neutral-400">3.8M Subs</p>
+                            </div>
+                            <button
+                                class="w-full py-2.5 rounded-full bg-primary-dim text-white text-xs font-bold uppercase tracking-widest glow-primary hover:bg-red-500 transition-all">Subscribe</button>
+                        </div>
+                    </div>
+                    <!-- Large Card 3 -->
+                    <div
+                        class="group bg-surface-container-low rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-500">
+                        <div class="relative h-40">
+                            <img class="w-full h-full object-cover"
+                                data-alt="energetic concert stage with dynamic spotlights and silhouettes of a dancing crowd in a hazy atmospheric night"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1MR5ji1tv8Q7PJKpVeklnb6zF2KRt1iFTS8hEzUayEaeieL8mILPH1UJkDAbd6-wG8e1bxirUUFE63IyL1hSPOCBWXIh0ByaB2m0f0EhBjvhYfGjAcrMnI9BGasRrR5fEMrjSgEFPz-7ELS1ejl1vekrvGbc58rmSqevYyjyXZeqjuhnw_bQvshxc9x88lyo27i3PWe3VCTemh4a37CN6mp4E6lC5YW_WaYTsWb5fWgq8uszK-V5eCqjs3uur-9asnjmd5No4-80" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent">
+                            </div>
+                            <div class="absolute bottom-4 left-6 flex items-center">
+                                <div
+                                    class="w-16 h-16 rounded-xl border-4 border-surface-container-low overflow-hidden bg-background">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="artistic portrait of a musician holding a guitar in a dark studio with moody red backlight"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCte_2qNI4tzOHdRP10-zHyFDftIOb_Y7rfj9_WiumwyPbx2YRpTKA6RLtVlPK-uDNwdaOrYBcXURjsNiz5_N2U_WJXgW94H8bjNWcDWa-rEa16Yfspx3v3R47mL4vXaa5hO30wV0x-Ttr8S_MPB_r5Hz6X3W_Cq0XwjRnhC7LFNuGFMwpk7FuFqDDhHs7gx-3cWmadxPJN7C0x2oYqIXjdS1MOUF-pBEpOc8iBj9GTWNPWnEIOv_xIvkGktNu7Yvqrd9JcE_FLTjw" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-2">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold group-hover:text-red-600 transition-colors">Bass Drop
+                                    </h3>
+                                    <p class="text-[10px] uppercase tracking-widest text-neutral-500">Live Electronic
+                                        Music</p>
+                                </div>
+                                <p class="text-xs font-bold text-neutral-400">7.1M Subs</p>
+                            </div>
+                            <button
+                                class="w-full py-2.5 rounded-full bg-primary-dim text-white text-xs font-bold uppercase tracking-widest glow-primary hover:bg-red-500 transition-all">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section 3: Recommended for You -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold font-headline tracking-tight mb-8">Recommended for You</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <!-- Recommendation Item 1 -->
+                    <div
+                        class="flex items-center p-4 bg-surface-container/30 hover:bg-surface-container/60 rounded-xl border border-white/5 transition-all group">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="professional workspace with high-end monitors showing code and analytics in a sleek modern office"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcDoeVRu7O13MiEYFVfARX5hev27razttiFa9W0XXxwamDVpHke23Y4bjIQahAVnRXGnWkQPFR2ULao9TSPFkh_41HvFtB61bgvZkBF_1yM9Pe4F-i79ga1chE7QwXwvZsh05zIpg8rO7jYmQBWDUnRKAyKo9BBdzsNsEWB3o4PODYmSzg92kBOpy_qyanUtMfdlb3a3lH1xSavvRqkZaZ-2jtk3mSesrsmQNWNJFBZZZCw2trw2ZxmA-bY-bruaHiRGmMXx4xJqw" />
+                        </div>
+                        <div class="ml-6 flex-1 min-w-0">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="text-base font-bold truncate">The Code Lab</h3>
+                                <span class="text-[10px] font-bold text-neutral-500">420K Subs</span>
+                            </div>
+                            <p class="text-xs text-neutral-400 line-clamp-1 mb-3">Deep dives into software architecture
+                                and modern web technologies with weekly coding challenges.</p>
+                            <button
+                                class="px-4 py-1.5 rounded-full bg-surface-container-highest/60 text-[10px] uppercase tracking-widest font-bold hover:bg-primary-dim hover:text-white transition-all">Subscribe</button>
+                        </div>
+                    </div>
+                    <!-- Recommendation Item 2 -->
+                    <div
+                        class="flex items-center p-4 bg-surface-container/30 hover:bg-surface-container/60 rounded-xl border border-white/5 transition-all group">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="top-down shot of high-quality organic ingredients being prepared in a professional chef's kitchen"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJrIk61InGDUkyfoYWlFBV1p1H1n7Qpn7G-C2BLdfM3CguAU-snhb6MitINEPJxjiZWGmXjMhMwN2RZSwP96ko0Gi-ZHKmzDq4UgfwrCorG4aC7SFTbxvprXozvAF_H9m6_t8O2b1Mwl_wIAASlcKyPQh7BtNYP7dTyl-ulXEb6xvfGh1HtSZUt79NyNTQSmoodxwM4XWPRWJiBn8Vbjqaf1QkT4EWb82yy4ImyogDRZVFUmFkG0HNuOIEQCYUa2Def5C0JconafM" />
+                        </div>
+                        <div class="ml-6 flex-1 min-w-0">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="text-base font-bold truncate">Chef's Palette</h3>
+                                <span class="text-[10px] font-bold text-neutral-500">890K Subs</span>
+                            </div>
+                            <p class="text-xs text-neutral-400 line-clamp-1 mb-3">Master the art of gourmet cooking with
+                                step-by-step guides from world-class culinary experts.</p>
+                            <button
+                                class="px-4 py-1.5 rounded-full bg-surface-container-highest/60 text-[10px] uppercase tracking-widest font-bold hover:bg-primary-dim hover:text-white transition-all">Subscribe</button>
+                        </div>
+                    </div>
+                    <!-- Recommendation Item 3 -->
+                    <div
+                        class="flex items-center p-4 bg-surface-container/30 hover:bg-surface-container/60 rounded-xl border border-white/5 transition-all group">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="team of young entrepreneurs collaborating in a vibrant startup space with whiteboard walls and glass partitions"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVc8x0wZVotsVG-faJHpXqt6WpCdg3FSXjChTB3_4GMgdcHQpw2Nk3MlfD8UYzrC2ONnWXpgShYDcLpqrdTB-IR1YDxToc2jFUY_Hji7uszB31lWFbWjBrjQpD6iQNXYDLiExNN3cZilfbeOjxQZQhJwAiQaEzscVJYysgWJOlQCJ_sNAmJAMoe422eEkDapXkxY7Zv6OMCe51nt_DSoXJVF4hQ_D8KQtOLtqJaLwlwRD1Rn-b8vfR66ALeRn3z_BVx7bWT_6-aC8" />
+                        </div>
+                        <div class="ml-6 flex-1 min-w-0">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="text-base font-bold truncate">Startup Grind</h3>
+                                <span class="text-[10px] font-bold text-neutral-500">1.5M Subs</span>
+                            </div>
+                            <p class="text-xs text-neutral-400 line-clamp-1 mb-3">Interviews with tech founders and
+                                venture capitalists sharing insights on scaling modern businesses.</p>
+                            <button
+                                class="px-4 py-1.5 rounded-full bg-surface-container-highest/60 text-[10px] uppercase tracking-widest font-bold hover:bg-primary-dim hover:text-white transition-all">Subscribe</button>
+                        </div>
+                    </div>
+                    <!-- Recommendation Item 4 -->
+                    <div
+                        class="flex items-center p-4 bg-surface-container/30 hover:bg-surface-container/60 rounded-xl border border-white/5 transition-all group">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="macro shot of a high-fidelity record player needle on a spinning vinyl with warm retro lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwKrdwU2cvntTa_Xo4wbR28wb0JTUyCwFDnllIPsMdLOjoLW6rr7xMzDSeKo-qN4H2fskXbkUO974_K_wmSLf1sV2OvvanhSpuX2r24m1nTpoAgPD34UzSN8ej3z28h_fCYeF5405BPNopHCEDHF1R9YWFFMoKZGQNs0QlH-ggB1SAhNB4mFmGAVQyYjJP-bmMmX_tLk1oW1xHSxvFpounDvA7BmfbRuZ2unce1dNvT3BZ9xD2V0Ij_ajJlgaPfj_FFnhJYouLnfw" />
+                        </div>
+                        <div class="ml-6 flex-1 min-w-0">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="text-base font-bold truncate">Vinyl Theory</h3>
+                                <span class="text-[10px] font-bold text-neutral-500">230K Subs</span>
+                            </div>
+                            <p class="text-xs text-neutral-400 line-clamp-1 mb-3">Exploring the history of music through
+                                rare vinyl records and acoustic session recordings.</p>
+                            <button
+                                class="px-4 py-1.5 rounded-full bg-surface-container-highest/60 text-[10px] uppercase tracking-widest font-bold hover:bg-primary-dim hover:text-white transition-all">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Contextual FAB (Suppressed on this page as per rules) -->
+</body>
+
+</html>

@@ -5,10 +5,10 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Liked Videos | NEBULA</title>
-    <script src="js/tailwind.js"></script>
+    <title>Stereo - Explore</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,800;0,900;1,800;1,900&amp;family=Manrope:wght@400;500;700&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -22,57 +22,57 @@
             theme: {
                 extend: {
                     "colors": {
-                        "surface-container-high": "#20201F",
-                        "tertiary-fixed-dim": "#C889F1",
-                        "on-primary-container": "#4F0000",
-                        "secondary": "#FE7E8D",
-                        "on-error-container": "#FFB2B9",
                         "surface-container-lowest": "#000000",
-                        "tertiary-fixed": "#D697FF",
-                        "tertiary-dim": "#C587EE",
-                        "tertiary-container": "#D394FD",
-                        "on-primary": "#650000",
-                        "on-primary-fixed-variant": "#610000",
-                        "surface-container-highest": "#262626",
-                        "secondary-fixed-dim": "#FFAEB4",
-                        "on-error": "#490013",
-                        "error": "#FF6E84",
-                        "secondary-fixed": "#FFC2C6",
-                        "on-tertiary-fixed": "#2A0044",
-                        "on-tertiary-container": "#4A0671",
                         "error-dim": "#D73357",
-                        "surface-variant": "#262626",
-                        "inverse-surface": "#FCF9F8",
-                        "surface-container": "#1A1A1A",
-                        "primary-dim": "#EB0002",
-                        "primary-container": "#FF7764",
-                        "on-tertiary-fixed-variant": "#56197D",
-                        "on-secondary-container": "#FFC0C5",
-                        "error-container": "#A70138",
-                        "surface-container-low": "#131313",
-                        "on-secondary-fixed": "#6a0c22",
-                        "on-secondary-fixed-variant": "#912B3C",
-                        "outline-variant": "#484847",
-                        "on-tertiary": "#55187C",
-                        "primary-fixed": "#FF7764",
-                        "on-surface": "#FFFFFF",
-                        "surface-bright": "#2C2C2C",
-                        "tertiary": "#DDA6FF",
-                        "on-secondary": "#570017",
+                        "secondary-fixed-dim": "#FFAEB4",
                         "on-primary-fixed": "#000000",
+                        "on-primary-container": "#4F0000",
+                        "on-secondary": "#570017",
+                        "tertiary-fixed-dim": "#C889F1",
+                        "surface-container-highest": "#262626",
+                        "on-tertiary": "#55187C",
+                        "secondary-fixed": "#FFC2C6",
+                        "on-background": "#FFFFFF",
+                        "inverse-on-surface": "#565555",
+                        "surface-dim": "#0E0E0E",
+                        "surface-container": "#1A1A1A",
+                        "primary-fixed": "#FF7764",
+                        "tertiary": "#DDA6FF",
+                        "on-surface": "#FFFFFF",
+                        "inverse-primary": "#C20001",
+                        "on-primary-fixed-variant": "#610000",
+                        "inverse-surface": "#FCF9F8",
+                        "on-tertiary-container": "#4A0671",
+                        "on-secondary-container": "#FFC0C5",
+                        "surface-variant": "#262626",
+                        "on-secondary-fixed": "#6a0c22",
+                        "surface-bright": "#2C2C2C",
                         "secondary-dim": "#F47785",
+                        "primary-container": "#FF7764",
+                        "outline-variant": "#484847",
+                        "on-tertiary-fixed-variant": "#56197D",
+                        "tertiary-dim": "#C587EE",
                         "outline": "#767575",
+                        "tertiary-fixed": "#D697FF",
+                        "on-tertiary-fixed": "#2A0044",
+                        "surface": "#0E0E0E",
+                        "on-secondary-fixed-variant": "#912B3C",
+                        "secondary": "#FE7E8D",
+                        "primary-dim": "#EB0002",
+                        "tertiary-container": "#D394FD",
+                        "on-error-container": "#FFB2B9",
+                        "background": "#0E0E0E",
+                        "surface-tint": "#FF8E7D",
+                        "on-error": "#490013",
+                        "surface-container-low": "#131313",
+                        "on-primary": "#650000",
                         "primary": "#FF8E7D",
                         "on-surface-variant": "#ADAAAA",
-                        "surface": "#0E0E0E",
-                        "secondary-container": "#842133",
-                        "inverse-primary": "#C20001",
-                        "inverse-on-surface": "#565555",
-                        "background": "#0E0E0E",
+                        "error-container": "#A70138",
                         "primary-fixed-dim": "#FF5B47",
-                        "on-background": "#FFFFFF",
-                        "surface-dim": "#0E0E0E",
-                        "surface-tint": "#FF8E7D"
+                        "secondary-container": "#842133",
+                        "error": "#FF6E84",
+                        "surface-container-high": "#20201F"
                     },
                     "borderRadius": {
                         "DEFAULT": "1rem",
@@ -82,6 +82,7 @@
                     },
                     "fontFamily": {
                         "headline": ["Epilogue"],
+                        "display": ["Epilogue"],
                         "body": ["Manrope"],
                         "label": ["Manrope"]
                     }
@@ -90,355 +91,370 @@
         }
     </script>
     <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #0E0E0E;
+            color: #FFFFFF;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
 
-        body {
-            background-color: #0E0E0E;
-            color: #FFFFFF;
-            font-family: 'Manrope', sans-serif;
+        .glow-primary {
+            box-shadow: 0 0 20px rgba(235, 0, 2, 0.2);
         }
 
-        .text-glow {
-            text-shadow: 0 0 20px rgba(235, 0, 2, 0.2);
-        }
-
-        .glass-blur {
+        .glass-nav {
             backdrop-filter: blur(40px);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
 
-<body class="bg-background text-on-background selection:bg-primary-dim selection:text-white">
-    <!-- TopNavBar -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-2xl bg-gradient-to-b from-neutral-900 to-transparent shadow-[0_4px_30px_rgba(235,0,2,0.08)] flex justify-between items-center px-8 h-20 w-full font-['Epilogue'] tracking-tight">
-        <div class="flex items-center gap-4">
-            <span class="text-2xl italic font-black text-red-600">NEBULA</span>
-        </div>
-        <div class="hidden md:flex flex-1 justify-end items-center gap-8 mr-12">
-            <div class="relative w-full max-w-md">
-                <input
-                    class="w-full bg-surface-container-highest border-none rounded-full px-6 py-2 text-sm focus:ring-2 focus:ring-primary-dim transition-all"
-                    placeholder="Search cinematic library..." type="text" />
-                <span class="material-symbols-outlined absolute right-4 top-2 text-neutral-400"
-                    data-icon="search">search</span>
-            </div>
-            <div class="flex items-center gap-6">
-                <button class="text-neutral-400 hover:text-red-500 transition-colors active:scale-95 duration-200">
-                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-                </button>
-                <button class="text-neutral-400 hover:text-red-500 transition-colors active:scale-95 duration-200">
-                    <span class="material-symbols-outlined" data-icon="settings">settings</span>
-                </button>
-                <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-dim">
-                    <img alt="User Profile"
-                        data-alt="Close up portrait of a stylish person with confident expression in cinematic moody lighting"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeUD2RyNZPT2jeF0EXP3kVE95gflRWJPZEA8YxDm9t2_Xn0-_dCoathWJ8DgXVUeh9ItIHnKvvS7ROwcTBZvQDBMd4MckvyzD6JIFy3cykng0RKJBXTRyQgwDRNbhuucJu21tWXdp9xd458L0TkMaeDrBC93K9UTLaRWbDJLW7Yr_0sVUYunKMSTFlDGkR1nvlbOedfGAi3jr2ABmu9DNhJ420roKoh3Tro8jqlMQ6D4gmxEBZX4sYV8BUxZiPg9jZyPx9ECroqAo" />
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- SideNavBar -->
-    <aside
-        class="fixed left-0 top-0 h-full w-24 flex flex-col items-center py-8 z-40 bg-neutral-950 border-r border-white/10 font-['Manrope'] font-medium uppercase tracking-[0.2em] text-[10px] gap-10 justify-start">
-        <div class="mb-8">
-            <span class="text-primary-dim material-symbols-outlined scale-150"
-                data-icon="auto_awesome">auto_awesome</span>
-        </div>
-        <div class="flex flex-col gap-10 items-center w-full">
-            <a class="flex flex-col items-center gap-2 text-neutral-500 hover:text-white transition-all active:scale-110 duration-300 group"
-                href="index.html">
-                <span class="material-symbols-outlined scale-110" data-icon="home">home</span>
-                <span>Home</span>
-            </a>
-            <a class="flex flex-col items-center gap-2 text-neutral-500 hover:text-white transition-all active:scale-110 duration-300 group"
-                href="#">
-                <span class="material-symbols-outlined scale-110" data-icon="explore">explore</span>
-                <span>Discovery</span>
-            </a>
-            <a class="flex flex-col items-center gap-2 text-neutral-500 hover:text-white transition-all active:scale-110 duration-300 group"
-                href="#">
-                <span class="material-symbols-outlined scale-110" data-icon="live_tv">live_tv</span>
-                <span>TV Shows</span>
-            </a>
-            <a class="flex flex-col items-center gap-2 text-red-600 border-r-4 border-red-600 pr-1 transition-all active:scale-110 duration-300 group"
-                href="#">
-                <span class="material-symbols-outlined scale-110" data-icon="favorite"
-                    style="font-variation-settings: 'FILL' 1;">favorite</span>
-                <span class="font-bold">Liked</span>
-            </a>
-        </div>
-        <div class="mt-auto flex flex-col gap-10 items-center w-full">
-            <a class="flex flex-col items-center gap-2 text-neutral-500 hover:text-white transition-all group" href="#">
-                <span class="material-symbols-outlined scale-110" data-icon="download">download</span>
-                <span>Downloads</span>
-            </a>
-        </div>
-    </aside>
+<body class="bg-background text-on-background">
+ <!-- TopNavBar Shell -->
+  <nav
+    class="fixed top-0 w-full z-50 h-20 bg-neutral-950/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(235,0,2,0.08)] flex justify-between items-center px-6 md:px-12 no-line-rule surface-transition">
+    <div class="flex items-center gap-12">
+      <a href="index.html">
+        <img src="img/Stereo-logo.png" alt="">
+      </a>
+      <div class="hidden md:flex gap-8 font-['Manrope'] text-sm tracking-widest uppercase">
+        <a class="text-neutral-400  hover:text-[#EB0002] transition-colors duration-300"
+          href="index.html">Home</a>
+        <a href="explore.html" class="text-neutral-400 border-b-2 border-[#EB0002] hover:text-[#EB0002] transition-colors duration-300" href="#">Explore</a>
+        <a href="channels.html" class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Channels</a>
+        <a href="library.html" class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Library</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="hidden lg:flex items-center bg-surface-container-highest px-4 py-2 rounded-full gap-3">
+        <span class="material-symbols-outlined text-neutral-400 text-lg">search</span>
+        <input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-white placeholder-neutral-500"
+          placeholder="Search streams..." type="text" />
+      </div>
+      <div class="flex items-center gap-4 text-white">
+        <span class="material-symbols-outlined hover:text-[#EB0002] cursor-pointer">notifications</span>
+        <span class="material-symbols-outlined hover:text-[#EB0002] cursor-pointer">account_circle</span>
+      </div>
+    </div>
+  </nav>
+  <!-- SideNavBar Shell (Desktop Only) -->
+  <aside
+    class="hidden md:flex fixed left-0 top-0 h-screen w-20 z-40 bg-[#0E0E0E] flex-col items-center py-24 gap-8 bg-gradient-to-r from-[#1A1A1A] to-transparent flat no shadows">
+    <div class="flex flex-col items-center gap-1 mb-12">
+    </div>
+    <div class="flex flex-col gap-10">
+      <a class="flex flex-col items-center gap-2 group text-[#808080] "
+        href="#">
+        <span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform duration-200"
+          style="font-variation-settings: 'FILL' 1;">home</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Home</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-neutral-500 hover:text-white hover:scale-110 transition-all duration-200"
+        href="#">
+        <span class="material-symbols-outlined text-2xl">movie</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Movies</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-neutral-500 hover:text-white hover:scale-110 transition-all duration-200"
+        href="#">
+        <span class="material-symbols-outlined text-2xl">tv</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Series</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-neutral-500 hover:text-white hover:scale-110 transition-all duration-200"
+        href="#">
+        <span class="material-symbols-outlined text-2xl">bookmarks</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">List</span>
+      </a>
+    </div>
+  </aside>
+
     <!-- Main Content -->
-    <main class="ml-24 pt-32 px-12 pb-20">
-        <!-- Header -->
-        <header class="mb-12">
-            <h1 class="text-6xl font-black italic tracking-tighter font-headline mb-4 uppercase">Explore Videos</h1>
-            <div class="flex items-center gap-4 text-neutral-400 text-sm">
-                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]"
-                        data-icon="video_library">video_library</span> 124 Videos</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-700"></span>
-                <span>Updated 2 hours ago</span>
-            </div>
-        </header>
-        <!-- Filters -->
-        <section class="mb-10 flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-            <button
-                class="px-6 py-2 bg-primary-dim text-white rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_20px_rgba(235,0,2,0.2)]">Recently
-                Liked</button>
-            <button
-                class="px-6 py-2 bg-surface-container-highest/60 backdrop-blur-md text-neutral-300 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors">Most
-                Watched</button>
-            <button
-                class="px-6 py-2 bg-surface-container-highest/60 backdrop-blur-md text-neutral-300 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors">Oldest</button>
-            <button
-                class="px-6 py-2 bg-surface-container-highest/60 backdrop-blur-md text-neutral-300 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors">A-Z</button>
-        </section>
-        <!-- Video Grid -->
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            <!-- Video Card 1 -->
-            <div class="group cursor-pointer">
-                <div
-                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
-                    <img alt="Cinema Still" class="w-full h-full object-cover"
-                        data-alt="Dramatic abstract geometric shapes with deep red and black lighting in a cinematic digital art style"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu0RxYQoe5nDDsXCqw2vvfItIUIR2YnveT28WzEfd64nKWsZL3T7rIAoGUCJtvWNEjELh23G8NdGWY-PVcSn4JgZutiLQynBiX2-NBpsHTW2YEHg3YqITbeBEk2lK5LbjJMabbhOUMHzE2LvGFpIbwFOBGqrjLZuhRQlVMl-0EnyC7ohYp6RhPVX2_S0OtV34Mf0IYF-yLtR4hkt2VPG-GexmtZgOKh7bSh_3rMbVcwKntyhn6Fw8_To62P5ec5ktU1wmAuKOS2OA" />
+    <main class="ml-24 pt-24 px-8 pb-12">
+        <div class="max-w-7xl mx-auto">
+            <!-- Heading & Global Search -->
+            <div class="mb-12">
+                <h1 class="font-['Epilogue'] font-black text-6xl tracking-tight mb-8">Explore</h1>
+                <div class="relative w-full max-w-4xl">
+                    <input
+                        class="w-full bg-surface-container px-8 py-6 rounded-xl border-none focus:ring-2 focus:ring-primary-dim text-xl font-['Manrope'] placeholder:text-on-surface-variant shadow-2xl"
+                        placeholder="Discover movies, creators, and cinematic experiences..." type="text" />
                     <div
-                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
-                        12:45</div>
-                    <!-- Progress Bar -->
-                    <div class="absolute bottom-0 left-0 h-1 bg-neutral-800 w-full">
-                        <div class="h-full bg-primary-dim shadow-[0_0_10px_rgba(235,0,2,0.6)]" style="width: 65%;">
+                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-primary-dim p-4 rounded-lg cursor-pointer hover:scale-105 transition-transform glow-primary">
+                        <span class="material-symbols-outlined text-white">search</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Filter Section -->
+            <div class="flex flex-col gap-8 mb-12">
+                <!-- Category Tabs -->
+                <div class="flex items-center gap-3 overflow-x-auto hide-scrollbar">
+                    <button
+                        class="px-6 py-2.5 rounded-full bg-primary-dim text-white font-['Manrope'] text-sm font-bold glow-primary">Trending</button>
+                    <button
+                        class="px-6 py-2.5 rounded-full bg-surface-container-highest/60 backdrop-blur-md text-on-surface-variant font-['Manrope'] text-sm hover:text-white transition-colors">Tech</button>
+                    <button
+                        class="px-6 py-2.5 rounded-full bg-surface-container-highest/60 backdrop-blur-md text-on-surface-variant font-['Manrope'] text-sm hover:text-white transition-colors">Education</button>
+                    <button
+                        class="px-6 py-2.5 rounded-full bg-surface-container-highest/60 backdrop-blur-md text-on-surface-variant font-['Manrope'] text-sm hover:text-white transition-colors">Entertainment</button>
+                    <button
+                        class="px-6 py-2.5 rounded-full bg-surface-container-highest/60 backdrop-blur-md text-on-surface-variant font-['Manrope'] text-sm hover:text-white transition-colors">Music</button>
+                    <button
+                        class="px-6 py-2.5 rounded-full bg-surface-container-highest/60 backdrop-blur-md text-on-surface-variant font-['Manrope'] text-sm hover:text-white transition-colors">Science</button>
+                    <button
+                        class="px-6 py-2.5 rounded-full bg-surface-container-highest/60 backdrop-blur-md text-on-surface-variant font-['Manrope'] text-sm hover:text-white transition-colors">Gaming</button>
+                </div>
+                <!-- Secondary Filters -->
+                <div class="flex items-center justify-between border-t border-white/5 pt-8">
+                    <div class="flex items-center gap-8">
+                        <div class="group cursor-pointer">
+                            <span
+                                class="font-['Manrope'] text-[10px] uppercase tracking-widest text-on-surface-variant block mb-1">Duration</span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-bold">Any Length</span>
+                                <span class="material-symbols-outlined text-sm text-primary-dim">expand_more</span>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <span
+                                class="font-['Manrope'] text-[10px] uppercase tracking-widest text-on-surface-variant block mb-1">Popularity</span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-bold">Most Viewed</span>
+                                <span class="material-symbols-outlined text-sm text-primary-dim">expand_more</span>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <span
+                                class="font-['Manrope'] text-[10px] uppercase tracking-widest text-on-surface-variant block mb-1">Upload
+                                Date</span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-bold">This Month</span>
+                                <span class="material-symbols-outlined text-sm text-primary-dim">expand_more</span>
+                            </div>
                         </div>
                     </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
-                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                    </div>
-                </div>
-                <h3
-                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
-                    THE NEON HORIZON: A CYBERPUNK JOURNEY</h3>
-                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">NEBULA ORIGINALS</p>
-                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
-                    <span>1.2M VIEWS</span>
-                    <span class="mx-2 text-neutral-700">•</span>
-                    <span>2 DAYS AGO</span>
+                    <button class="flex items-center gap-2 text-on-surface-variant hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-lg">tune</span>
+                        <span class="text-xs uppercase tracking-widest">Advanced Filters</span>
+                    </button>
                 </div>
             </div>
-            <!-- Video Card 2 -->
-            <div class="group cursor-pointer">
-                <div
-                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
-                    <img alt="Cinema Still" class="w-full h-full object-cover"
-                        data-alt="Stunning aerial view of mountain peaks at sunset with orange and deep blue hues, cinematic wide shot"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyhdEmAg85tzWofmm0OdhTxL5NpFwjXtc_zrc2iDF7aVpEhYb6ZrJT2_aguG4kEB21fxhcVF8V_iXihpG8QJkvFs28wjJt7pq82JDI8TRnzRrLAm9VwDiXHIt-_GXDC5EUU4kVO8tTV4Y1AMw7MmV4a1xQYm4SoAuVTqwX6TbKJWb-RoFYGogb32h27IvNZJypQaqBWGqv_9uygmjF2vWikCvbffr1QzLYT9yzHZ68_wI1miMUo2aAXVJ4gfeAVMHMFDKTXKhfJR0" />
+            <!-- Video Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10">
+                <!-- Card 1 -->
+                <div class="group cursor-pointer">
                     <div
-                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
-                        45:10</div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
-                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                    </div>
-                </div>
-                <h3
-                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
-                    BEYOND THE PEAK: CINEMATIC WILDERNESS</h3>
-                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">EARTH VISION</p>
-                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
-                    <span>890K VIEWS</span>
-                    <span class="mx-2 text-neutral-700">•</span>
-                    <span>1 WEEK AGO</span>
-                </div>
-            </div>
-            <!-- Video Card 3 -->
-            <div class="group cursor-pointer">
-                <div
-                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
-                    <img alt="Cinema Still" class="w-full h-full object-cover"
-                        data-alt="High tech computer components with glowing red neon lights in a futuristic lab setting, dark mood"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgVSOylpbKQYVfFGtBvFdyqsAQiHzhLvmMAC3TGDCWF6s-OJ8Bnz5BlohzY4npLn3t9LXErwxzulki2kSIJgKmR3j3oeT5pX182tZ4luuAqEF-wEW_wuDjj_G_kBkNHJ5U7M1JmVcsEfjglIWE8IqviNGq4Su9XerY-G0NkrUaSBuFOoWvqfthlAnJ28HsgwKw6C7sSNaoycK6Q7m_knKQc25De3BtLUfhqBiEl1rvh0Awcg2QA8o97JK-ezwPjSJQTv6fAjyV6B8" />
-                    <div
-                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
-                        08:22</div>
-                    <div class="absolute bottom-0 left-0 h-1 bg-neutral-800 w-full">
-                        <div class="h-full bg-primary-dim shadow-[0_0_10px_rgba(235,0,2,0.6)]" style="width: 20%;">
+                        class="relative aspect-video rounded-xl overflow-hidden mb-4 border border-white/5 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(235,0,2,0.15)]">
+                        <img class="w-full h-full object-cover"
+                            data-alt="abstract 3d fluid shapes in deep red and charcoal black with cinematic depth of field and soft lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuANSkcmuTk7FjFm65iOuF-7PewmL6FCHS97LPP4Kl9aUGuTM_MJAAapThHwocCYbt9J5NLlxYKJASAuvZLe3LXKPOTLIni46NQse5irhK_UC82_m7puTb0DXMmMsIzVPRbgIkfAoUJkNzDunsGVGqHBwgjZrhxuBWSU9MaAXWtqORB6mdvaDnDCJeOMFAk2iUYS6JtCIsYpLOjXB0oM2xFTRbMRzSovpO8fwL2bgrEPKfyEssqQq5LnlUqoGDHpK0yE8-c1CI9xB1U" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-neutral-950/90 text-white text-[10px] font-bold px-2 py-1 rounded border border-red-600/30">
+                            12:45</div>
+                        <div
+                            class="absolute inset-0 bg-primary-dim/10 opacity-0 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
-                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                    </div>
+                    <h3
+                        class="font-['Manrope'] font-bold text-base text-white group-hover:text-primary-dim transition-colors line-clamp-2">
+                        The Future of Neural Cinema: AI in Storytelling</h3>
+                    <p class="font-['Manrope'] text-sm text-on-surface-variant mt-2 flex items-center gap-2">
+                        <span>Lumina Studios</span>
+                        <span class="w-1 h-1 rounded-full bg-neutral-700"></span>
+                        <span>1.2M views</span>
+                    </p>
                 </div>
-                <h3
-                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
-                    FUTURE TECH: THE QUANTUM REVOLUTION</h3>
-                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">TECH INSIDER</p>
-                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
-                    <span>3.4M VIEWS</span>
-                    <span class="mx-2 text-neutral-700">•</span>
-                    <span>3 WEEKS AGO</span>
-                </div>
-            </div>
-            <!-- Video Card 4 -->
-            <div class="group cursor-pointer">
-                <div
-                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
-                    <img alt="Cinema Still" class="w-full h-full object-cover"
-                        data-alt="Empty movie theater with glowing screen and dramatic shadows, cinematic atmosphere"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgcIpxqOA6gc-hqE4fn4zJ17fSyb70MTuQAFiWy7JaDMvOeQMWp5nLD1kCLvSeTVw6Ho8ez2GUmuSNz8TaHnpWicArxDeDFP_YNkn5fVQlrVW6OGlwxOni4fybobiT6PryEmBbv3KVQOGZ3bL3-X6JRFMBU0ig-5UZbqKr8U3xiKcvV_YTcVLhaysLtjZC009mUUB-_Cfn88dAOyIWevL0S2j--Ci4_57JOhPggUhPvdGz99cC7Yk87BgaMt3Wb3l_X8F0wqlRuPU" />
+                <!-- Card 2 -->
+                <div class="group cursor-pointer">
                     <div
-                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
-                        02:15:00</div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
-                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                    </div>
-                </div>
-                <h3
-                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
-                    THE SILENT SCREEN: DOCUMENTARY</h3>
-                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">CINEMA STUDIES</p>
-                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
-                    <span>150K VIEWS</span>
-                    <span class="mx-2 text-neutral-700">•</span>
-                    <span>1 MONTH AGO</span>
-                </div>
-            </div>
-            <!-- Video Card 5 -->
-            <div class="group cursor-pointer">
-                <div
-                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
-                    <img alt="Cinema Still" class="w-full h-full object-cover"
-                        data-alt="Abstract colorful light streaks against a dark background, long exposure photography, vibrant reds and purples"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5amm7qJNHtgZEP7WVfI8iuhyt5eYnSqotOx8I6Grr6fzSm4hX2JvpiD7QSzwqwyMNu7vFwvCFdq1bO5HRvdppgearFBiHPkQedccG586xEkcuSOC7OzZcMWK2dd-yPUaCZUZEMoYQBiks_sSQUL38udzSy20HJdf9hT58wGXk0a4bhGebAt4Qda89DNS_l9cJUV0yrmKnWhji8KdMYoIdAiNmVwfKyrbGIcwvreycGYC1s4BbEfsdapOkq1gVGNvAyvh7H3LH2Bc" />
-                    <div
-                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
-                        05:30</div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
-                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                    </div>
-                </div>
-                <h3
-                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
-                    LIGHTSPEED: AN EXPERIMENTAL FILM</h3>
-                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">VANGUARD ART</p>
-                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
-                    <span>542K VIEWS</span>
-                    <span class="mx-2 text-neutral-700">•</span>
-                    <span>2 MONTHS AGO</span>
-                </div>
-            </div>
-            <!-- Video Card 6 -->
-            <div class="group cursor-pointer">
-                <div
-                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
-                    <img alt="Cinema Still" class="w-full h-full object-cover"
-                        data-alt="Extreme close up of a human eye reflecting a digital landscape with matrix-like codes, sci-fi aesthetic"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaQPejWvk-2r2H-eMuYnCkE4Z7j5H0kK1h3747YNpor6kVCYdazUqftnZmy4mr40gcyEn42aWwoHkrtVjQX-Ynnt1TNV1EMlRPup14v1WxIj2Lg74gyK-qxa8OIlQ2Geb655lxXZXnPbmySqtGc7yoMhOsdsDvTjoa1vb-oQfD-Pc1FQ0YxmxAf5xtw0BTv4w797Yk_LhdmB9OHC4tdPCqXNnot7V8vT0ry8-dsf65Jz2Tq71T9tseMaC-eOA9-TQO4zeUA0-DK9Q" />
-                    <div
-                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
-                        18:05</div>
-                    <div class="absolute bottom-0 left-0 h-1 bg-neutral-800 w-full">
-                        <div class="h-full bg-primary-dim shadow-[0_0_10px_rgba(235,0,2,0.6)]" style="width: 95%;">
+                        class="relative aspect-video rounded-xl overflow-hidden mb-4 border border-white/5 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(235,0,2,0.15)]">
+                        <img class="w-full h-full object-cover"
+                            data-alt="cinematic close-up of high-end camera lens with red light reflections and dark moody atmosphere"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZxSPSZkK_6Or3aHTZgPM0753Sj7UwandunQlkH_46H6i6O3-XKNIVSPOozDfpFgksNCnQohxVrUF9xoq8Xa7Tgt6pjPfAUxR5oG5EloCbuHFxKIRchUCNgVjOYFOwdq3_YVWL1RaWdLVz5damyHURQ4rjUN-Lnz1aygrACgrRnI7ErgwQCGJgYa8yhWdKiFhCa3uRsC-3-sedHR_GN-JznGMGvZ1LQGA8UikQNm8kYNaESJ5H5M0v3KnG718xeWl6WZr2BMvw8kc" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-neutral-950/90 text-white text-[10px] font-bold px-2 py-1 rounded border border-red-600/30">
+                            08:20</div>
+                        <div
+                            class="absolute inset-0 bg-primary-dim/10 opacity-0 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
-                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                    </div>
+                    <h3
+                        class="font-['Manrope'] font-bold text-base text-white group-hover:text-primary-dim transition-colors line-clamp-2">
+                        Mastering Low Light Cinematography</h3>
+                    <p class="font-['Manrope'] text-sm text-on-surface-variant mt-2 flex items-center gap-2">
+                        <span>Frame Control</span>
+                        <span class="w-1 h-1 rounded-full bg-neutral-700"></span>
+                        <span>450K views</span>
+                    </p>
                 </div>
-                <h3
-                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
-                    PERCEPTION: WHAT IS REALITY?</h3>
-                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">MIND PALACE</p>
-                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
-                    <span>2.1M VIEWS</span>
-                    <span class="mx-2 text-neutral-700">•</span>
-                    <span>3 MONTHS AGO</span>
-                </div>
-            </div>
-            <!-- Video Card 7 -->
-            <div class="group cursor-pointer">
-                <div
-                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
-                    <img alt="Cinema Still" class="w-full h-full object-cover"
-                        data-alt="Old cinema film reels and projector in a dusty atmospheric room with light beams cutting through the dark"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuClbdPnqC-dX5rjQauI9yripxnuBiP1PnEKwuWFbOHJ_iFfITEoQlDJDBx8ucFwr4YTQlGC6mW6nirRyOfO-VgSjBF54bA1k9i5j-cFFBosSl67jaHRTTBtBkUksAjM-dG1mi7S-gxulLN4BxejpZP7BdXlL5Y5ifJ3keSXllP8OnZWJdG-KG-Oorv8HwBHRaXLD3wIOC7phDTJYw2IsuJsE-udRw2HZcFhFcV4ZsTCAKHFOBjUR1tgfATQN8oxzk8AA6cpCPvHEq4" />
+                <!-- Card 3 -->
+                <div class="group cursor-pointer">
                     <div
-                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
-                        14:20</div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
-                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                    </div>
-                </div>
-                <h3
-                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
-                    THE LAST REEL: PRESERVING HISTORY</h3>
-                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">ARCHIVE PROJECT</p>
-                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
-                    <span>95K VIEWS</span>
-                    <span class="mx-2 text-neutral-700">•</span>
-                    <span>4 MONTHS AGO</span>
-                </div>
-            </div>
-            <!-- Video Card 8 -->
-            <div class="group cursor-pointer">
-                <div
-                    class="relative aspect-video rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-all duration-300 shadow-xl">
-                    <img alt="Cinema Still" class="w-full h-full object-cover"
-                        data-alt="Futuristic city skyline at night with massive holographic advertisements and flying vehicles, rain effects"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3WS6m8yJdD1zJ0wi_Nfu9uO2rwCuz1Rmu3hFfcrds4SnxhzRnMA608fwh5MAmCpkJQkrI2Yc4Aye5lraq8fI6EVGzMqdrKLCIE-tzTVSJTDuQgaorK-ijdrXt945rRxHa8tPFgtwasf2avFUFuXRs3HuGbNejf5cfIAIDY6kUNcVYRcLv2dPjz5YvgMSmKcPFWCvigAKekfu036iRsiTtoY61NX44ax5LxYA6mPJrbQYSKVfWR7dPK78Ivvhd0CI61I7lYQw-FXw" />
-                    <div
-                        class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-md text-[10px] font-bold tracking-widest">
-                        22:12</div>
-                    <div class="absolute bottom-0 left-0 h-1 bg-neutral-800 w-full">
-                        <div class="h-full bg-primary-dim shadow-[0_0_10px_rgba(235,0,2,0.6)]" style="width: 45%;">
+                        class="relative aspect-video rounded-xl overflow-hidden mb-4 border border-white/5 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(235,0,2,0.15)]">
+                        <img class="w-full h-full object-cover"
+                            data-alt="vintage technology setup with neon red lighting and glowing screen textures in a dark room"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz8N6JotHn7qYlQxi3DJII59ISw7Oxn-tK46pBCWg1B4Xq6IGXCduH_Jo-Kae6YrOQsHRuS48gOzkFCq-nv3xAW_s-8ytSw7FAHgemJnI9aff7JtUFsh15l_W1ppqT0jwi-V8FO7OpLKwhFj-w-cd7ROgMqXqE9bIZjlKJcUi-KVHwTaPK4AbL40goa5lGBdSCOi5R4KIK4eyhgWNsfRiinxc9asVsD7A9nWSpoNfgZRa-2PjYtwyzHSGlYJ-rQn0YNjR9r0f4-Oo" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-neutral-950/90 text-white text-[10px] font-bold px-2 py-1 rounded border border-red-600/30">
+                            24:15</div>
+                        <div
+                            class="absolute inset-0 bg-primary-dim/10 opacity-0 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-5xl" data-icon="play_circle"
-                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                    </div>
+                    <h3
+                        class="font-['Manrope'] font-bold text-base text-white group-hover:text-primary-dim transition-colors line-clamp-2">
+                        Retro-Futurism: Why We Can't Let Go of the 80s</h3>
+                    <p class="font-['Manrope'] text-sm text-on-surface-variant mt-2 flex items-center gap-2">
+                        <span>Synth Theory</span>
+                        <span class="w-1 h-1 rounded-full bg-neutral-700"></span>
+                        <span>890K views</span>
+                    </p>
                 </div>
-                <h3
-                    class="font-headline font-bold text-lg text-white mb-1 group-hover:text-primary-dim transition-colors line-clamp-1">
-                    METROPOLIS 2099: URBAN EVOLUTION</h3>
-                <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2">CITY OF FUTURE</p>
-                <div class="flex items-center text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
-                    <span>4.7M VIEWS</span>
-                    <span class="mx-2 text-neutral-700">•</span>
-                    <span>5 MONTHS AGO</span>
+                <!-- Card 4 -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative aspect-video rounded-xl overflow-hidden mb-4 border border-white/5 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(235,0,2,0.15)]">
+                        <img class="w-full h-full object-cover"
+                            data-alt="satellite view of earth at night with vibrant glowing city lights and nebula space background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGUBGZZ2rR3RKCrGqBw1lkG9wdA__qZ26eKYF0DFdM4N79C6J_Vyds2OFx-FtD3dB3pMq-jwg-rkFGciV0_XpOOuZBxFayR_NKErLbUYADE-bgV1wSBYUK87-WbBtYQULcOHj6il3aeMDhR2N078r-NxJ_QjcU43BMHmJ7V-DyO874f_NcMipu2bT2ylFOXJUpoQiQQDgscO-_VIOjfYSYRj0G2lveZp_XvI8NtSRWWwg3TvDzfucBoauXMEuVqXAef-ECchXC0aA" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-neutral-950/90 text-white text-[10px] font-bold px-2 py-1 rounded border border-red-600/30">
+                            15:50</div>
+                        <div
+                            class="absolute inset-0 bg-primary-dim/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h3
+                        class="font-['Manrope'] font-bold text-base text-white group-hover:text-primary-dim transition-colors line-clamp-2">
+                        The Dark Matter Mystery: Beyond the Void</h3>
+                    <p class="font-['Manrope'] text-sm text-on-surface-variant mt-2 flex items-center gap-2">
+                        <span>Cosmos Prime</span>
+                        <span class="w-1 h-1 rounded-full bg-neutral-700"></span>
+                        <span>2.5M views</span>
+                    </p>
+                </div>
+                <!-- Card 5 -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative aspect-video rounded-xl overflow-hidden mb-4 border border-white/5 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(235,0,2,0.15)]">
+                        <img class="w-full h-full object-cover"
+                            data-alt="abstract geometric composition with sharp red angles and deep black shadows cinematic lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1r1vvJYqhJBa3S4XpjMK8hJ5XtRmar8rnz-InjeTfmayJAg-FxoyTdVA3DIA_M7zQ5JPNkX-NRZijIHvRvfdf4r-lduQqFJM-5gTR5-buafiBQnOVarnhul4TGlnD74GB19XYm_wccNj6C1xB-Byd-75eh_XYbubIdd8-_vOpw2F-ecZ6u_fbPuX_IL31dZvW0fzYK6Rf8lvcJukReVxGSZMIPxmaJwEHqb_i9DEweTO9RPOSFzAFOI7LVDXrcXp1gutJP_zJuFw" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-neutral-950/90 text-white text-[10px] font-bold px-2 py-1 rounded border border-red-600/30">
+                            10:05</div>
+                        <div
+                            class="absolute inset-0 bg-primary-dim/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h3
+                        class="font-['Manrope'] font-bold text-base text-white group-hover:text-primary-dim transition-colors line-clamp-2">
+                        Minimalist Design Architecture: Tonal Layering</h3>
+                    <p class="font-['Manrope'] text-sm text-on-surface-variant mt-2 flex items-center gap-2">
+                        <span>Design Core</span>
+                        <span class="w-1 h-1 rounded-full bg-neutral-700"></span>
+                        <span>120K views</span>
+                    </p>
+                </div>
+                <!-- Card 6 -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative aspect-video rounded-xl overflow-hidden mb-4 border border-white/5 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(235,0,2,0.15)]">
+                        <img class="w-full h-full object-cover"
+                            data-alt="modern recording studio with glowing red acoustic panels and professional microphone silhouette"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3G4olGr4DF0zBlDMfsITq4pw8Fkl42ZiTcr0syR-OqBuZ3bJxD25zyMk3YUjfm-tLSmexkts3abIi1Qq46btfHpjMHihKEup6w3_OqgG2SyNJuHSrFyy6-UemCz_H8arpk5Aa9rJHqinykC5wHbNIv8-2yPLAqQssGXd2UeM78kOaEwFs-EskBvTvwSX2htGJ_28_R0aKh7y87zC3KV5r5EkfsFrv6sNQemAigJZwE2h8rwNObqeiWwjWTSdrWzubx8HLMC8rcpQ" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-neutral-950/90 text-white text-[10px] font-bold px-2 py-1 rounded border border-red-600/30">
+                            42:10</div>
+                        <div
+                            class="absolute inset-0 bg-primary-dim/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h3
+                        class="font-['Manrope'] font-bold text-base text-white group-hover:text-primary-dim transition-colors line-clamp-2">
+                        Deep Bass Design: The Science of Low Frequency</h3>
+                    <p class="font-['Manrope'] text-sm text-on-surface-variant mt-2 flex items-center gap-2">
+                        <span>Sonic Lab</span>
+                        <span class="w-1 h-1 rounded-full bg-neutral-700"></span>
+                        <span>1.8M views</span>
+                    </p>
+                </div>
+                <!-- Card 7 -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative aspect-video rounded-xl overflow-hidden mb-4 border border-white/5 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(235,0,2,0.15)]">
+                        <img class="w-full h-full object-cover"
+                            data-alt="black and white cinematic shot of a classic theater stage with a single red spotlight in center"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHc1oaOMwiFBeZDfdUFfrhBptuAV5cESlwdf62Ofknd_dspZy15t_cQRunNYMpAPpOp-UHP_8PUXq7Py5i6ka0AG6P_jhegibHKOfCGl2g4oHsuUdQ8Yu0Lb68lQcoEl6sAuZ25LKrz9Dqz9thZDStAaXY-ySjezzvxByfDNuZFSMN3ajGNCOg_KYMiS186yeSc5ZrMRSZm4JmHSRwogh0EGgWWxDi4JBNZbCKGn8T0dQ1162FpKxChmQy85WJ1YvRmXaNGwGu-wU" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-neutral-950/90 text-white text-[10px] font-bold px-2 py-1 rounded border border-red-600/30">
+                            19:30</div>
+                        <div
+                            class="absolute inset-0 bg-primary-dim/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h3
+                        class="font-['Manrope'] font-bold text-base text-white group-hover:text-primary-dim transition-colors line-clamp-2">
+                        Film Noir: Re-inventing the Shadow</h3>
+                    <p class="font-['Manrope'] text-sm text-on-surface-variant mt-2 flex items-center gap-2">
+                        <span>Cinema Critique</span>
+                        <span class="w-1 h-1 rounded-full bg-neutral-700"></span>
+                        <span>340K views</span>
+                    </p>
+                </div>
+                <!-- Card 8 -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative aspect-video rounded-xl overflow-hidden mb-4 border border-white/5 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(235,0,2,0.15)]">
+                        <img class="w-full h-full object-cover"
+                            data-alt="high-tech gaming setup with crimson red cooling systems and intense glowing hardware lights"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtPhBJ7ZLw5jqMP9l4GWSq-INp_GA-mHlX67WbGDwALFWDOwbKuqvkLRKHmmgMXH0Qi4QG2eys2fIvTlf5399YidZCGaCXKd-IRQX_Dh1uhh35CprV9nk-dePdvUbbyWqupoA5_jEfgOvONr3hInJvWl9coD7U_OVpGQUC8vCAMSbBRAZQWL5zzHjPttAU_hXwLHkqKP1NHKqpdzlbcmeHiNwkdZFc5v-nWHaOyvszbU7r2ieXPB4oKX_zOcXg_idbgAw_wNEsAEQ" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div
+                            class="absolute bottom-3 right-3 bg-neutral-950/90 text-white text-[10px] font-bold px-2 py-1 rounded border border-red-600/30">
+                            55:00</div>
+                        <div
+                            class="absolute inset-0 bg-primary-dim/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h3
+                        class="font-['Manrope'] font-bold text-base text-white group-hover:text-primary-dim transition-colors line-clamp-2">
+                        Unreal Engine 5.4: Breaking the Reality Barrier</h3>
+                    <p class="font-['Manrope'] text-sm text-on-surface-variant mt-2 flex items-center gap-2">
+                        <span>Tech Vault</span>
+                        <span class="w-1 h-1 rounded-full bg-neutral-700"></span>
+                        <span>3.1M views</span>
+                    </p>
                 </div>
             </div>
-        </section>
-        <!-- Pagination / Load More -->
-        <div class="mt-16 flex justify-center">
-            <button
-                class="px-10 py-4 border border-white/10 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all active:scale-95">
-                Load More Content
-            </button>
+            <!-- Loading Indicator -->
+            <div class="flex justify-center mt-20">
+                <div
+                    class="flex items-center gap-4 px-8 py-4 bg-surface-container rounded-full border border-white/5 hover:border-primary-dim/50 transition-all cursor-pointer group">
+                    <div class="w-2 h-2 rounded-full bg-primary-dim animate-pulse"></div>
+                    <span
+                        class="uppercase tracking-[0.2em] text-[10px] font-bold text-on-surface-variant group-hover:text-white">Load
+                        More Discoveries</span>
+                </div>
+            </div>
         </div>
     </main>
-    <!-- Contextual FAB (Hidden on Liked Videos per Suppression Rules) -->
 </body>
 
 </html>

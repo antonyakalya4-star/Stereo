@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>STEREO - Series</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,700;0,800;0,900;1,900&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed": "#FFC2C6",
+            "secondary-container": "#842133",
+            "on-primary-fixed-variant": "#610000",
+            "on-primary-fixed": "#000000",
+            "background": "#0E0E0E",
+            "surface-container-lowest": "#000000",
+            "surface-container": "#1A1A1A",
+            "tertiary-dim": "#C587EE",
+            "primary-container": "#FF7764",
+            "error-dim": "#D73357",
+            "tertiary-container": "#D394FD",
+            "surface-container-highest": "#262626",
+            "primary": "#FF8E7D",
+            "tertiary-fixed-dim": "#C889F1",
+            "on-surface-variant": "#ADAAAA",
+            "surface-variant": "#262626",
+            "on-tertiary": "#55187C",
+            "inverse-primary": "#C20001",
+            "tertiary": "#DDA6FF",
+            "surface-dim": "#0E0E0E",
+            "on-secondary-fixed-variant": "#912B3C",
+            "on-error": "#490013",
+            "secondary": "#FE7E8D",
+            "surface": "#0E0E0E",
+            "on-secondary": "#570017",
+            "on-tertiary-container": "#4A0671",
+            "primary-fixed-dim": "#FF5B47",
+            "secondary-fixed-dim": "#FFAEB4",
+            "surface-container-low": "#131313",
+            "outline-variant": "#484847",
+            "error": "#FF6E84",
+            "on-tertiary-fixed-variant": "#56197D",
+            "on-background": "#FFFFFF",
+            "tertiary-fixed": "#D697FF",
+            "on-tertiary-fixed": "#2A0044",
+            "surface-bright": "#2C2C2C",
+            "on-primary": "#650000",
+            "outline": "#767575",
+            "on-secondary-container": "#FFC0C5",
+            "on-error-container": "#FFB2B9",
+            "error-container": "#A70138",
+            "on-surface": "#FFFFFF",
+            "inverse-on-surface": "#565555",
+            "secondary-dim": "#F47785",
+            "primary-fixed": "#FF7764",
+            "primary-dim": "#EB0002",
+            "surface-container-high": "#20201F",
+            "on-secondary-fixed": "#6a0c22",
+            "inverse-surface": "#FCF9F8",
+            "on-primary-container": "#4F0000",
+            "surface-tint": "#FF8E7D"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Epilogue"],
+            "display": ["Epilogue"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glow-primary {
+      box-shadow: 0 0 20px rgba(235, 0, 2, 0.2);
+    }
+
+    .glass-nav {
+      backdrop-filter: blur(40px);
+    }
+
+    body {
+      background-color: #0E0E0E;
+      color: #FFFFFF;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0E0E0E;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #262626;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background selection:bg-primary-dim selection:text-white">
+  <!-- TopNavBar Shell -->
+  <nav
+    class="fixed top-0 w-full z-50 h-20 bg-neutral-950/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(235,0,2,0.08)] flex justify-between items-center px-6 md:px-12 no-line-rule surface-transition">
+    <div class="flex items-center gap-12">
+      <a href="index.html">
+        <img src="img/Stereo-logo.png" alt="">
+      </a>
+      <div class="hidden md:flex gap-8 font-['Manrope'] text-sm tracking-widest uppercase">
+        <a class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Home</a>
+        <a href="explore.html" class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Explore</a>
+        <a href="channels.html" class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Channels</a>
+        <a href="library.html" class="text-neutral-400 hover:text-[#EB0002] transition-colors duration-300" href="#">Library</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="hidden lg:flex items-center bg-surface-container-highest px-4 py-2 rounded-full gap-3">
+        <span class="material-symbols-outlined text-neutral-400 text-lg">search</span>
+        <input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-white placeholder-neutral-500"
+          placeholder="Search streams..." type="text" />
+      </div>
+      <div class="flex items-center gap-4 text-white">
+        <span class="material-symbols-outlined hover:text-[#EB0002] cursor-pointer">notifications</span>
+        <span class="material-symbols-outlined hover:text-[#EB0002] cursor-pointer">account_circle</span>
+      </div>
+    </div>
+  </nav>
+  <!-- SideNavBar Shell (Desktop Only) -->
+  <aside
+    class="hidden md:flex fixed left-0 top-0 h-screen w-20 z-40 bg-[#0E0E0E] flex-col items-center py-24 gap-8 bg-gradient-to-r from-[#1A1A1A] to-transparent flat no shadows">
+    <div class="flex flex-col items-center gap-1 mb-12">
+    </div>
+    <div class="flex flex-col gap-10">
+      <a class="flex flex-col items-center gap-2 group text-[#808080] "
+        href="index.html">
+        <span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform duration-200"
+          style="font-variation-settings: 'FILL' 1;">home</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Home</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-neutral-500 hover:text-white hover:scale-110 transition-all duration-200"
+        href="movies.html">
+        <span class="material-symbols-outlined text-2xl">movie</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Movies</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-[#EB0002] border-r-4 border-[#EB0002] pr-2 shadow-[0_0_20px_rgba(235,0,2,0.2)]"
+        href="series.html">
+        <span class="material-symbols-outlined text-2xl">tv</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">Series</span>
+      </a>
+      <a class="flex flex-col items-center gap-2 group text-neutral-500 hover:text-white hover:scale-110 transition-all duration-200"
+        href="list.html">
+        <span class="material-symbols-outlined text-2xl">bookmarks</span>
+        <span class="font-['Manrope'] font-medium text-[10px] tracking-[0.2em] uppercase">List</span>
+      </a>
+    </div>
+  </aside>
+  <!-- Main Content Area -->
+  <main class="ml-24 pt-24 pb-20">
+    <!-- Hero Banner Section -->
+    <section class="relative w-full h-[716px] px-8 mb-12">
+      <div class="relative w-full h-full rounded-xl overflow-hidden group">
+        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+          data-alt="Futuristic cyberpunk city street at night with glowing red and blue neon signs and heavy atmospheric fog"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAgfao2bmagsOjawz9XND_2n9DoOE-YcMwpIpszcJ7WNiNb1LAXpVpzUPBR3SYksmpDesiPJN-nfpa99PuxnA1WoaETJDUmQQ6wV_sQVIyHnO7Y-G1aeg94IiWzpGq7iEWOBHYugN_lp8HKkCNXcucnjWL7eZNJMH1bGGG5rpZwhKyWSJksGf0Wh-V-7IYcQe9wjqMa2mDqwkvSVg34V5Y1rGhOGzJAZgfoxu_1SLnyU1gkSYjF5S-zSDNuqxuqZACLe-G6OhJF5I" />
+        <!-- Overlay Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
+        <!-- Hero Content -->
+        <div class="absolute bottom-16 left-16 max-w-2xl">
+          <div class="flex items-center space-x-3 mb-4">
+            <span
+              class="bg-primary-dim text-white text-[10px] px-2 py-0.5 font-bold tracking-widest rounded uppercase">Exclusive</span>
+            <span class="text-zinc-300 text-[10px] font-bold tracking-widest uppercase">9.8 Rating</span>
+          </div>
+          <h1 class="font-headline font-black text-6xl italic text-white leading-none mb-6 tracking-tighter">NEON
+            SYNDICATE</h1>
+          <p class="text-zinc-300 font-body text-base mb-8 max-w-lg leading-relaxed">
+            In the heart of a rain-soaked dystopia, an underground network of data-thieves must navigate the glowing
+            labyrinth of the city's elite to expose a world-shattering conspiracy.
+          </p>
+          <div class="flex items-center space-x-4">
+            <button
+              class="bg-primary-dim text-white px-8 py-3 rounded-full flex items-center space-x-2 font-bold hover:scale-105 transition-transform glow-primary">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+              <span>Play Now</span>
+            </button>
+            <button
+              class="bg-surface-container-highest/60 backdrop-blur-md text-white px-8 py-3 rounded-full flex items-center space-x-2 font-bold hover:bg-surface-container-highest transition-colors">
+              <span class="material-symbols-outlined">info</span>
+              <span>More Info</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Category Tabs -->
+    <section class="px-12 mb-12">
+      <div class="flex items-center justify-between border-b border-white/5 pb-4">
+        <h2 class="font-headline font-extrabold text-3xl text-white">Series</h2>
+        <div class="flex space-x-8">
+          <button class="text-primary-dim font-bold text-sm tracking-wide relative">
+            Trending
+            <span class="absolute -bottom-[17px] left-0 w-full h-1 bg-primary-dim rounded-t-full glow-primary"></span>
+          </button>
+          <button
+            class="text-zinc-500 font-bold text-sm tracking-wide hover:text-white transition-colors">Popular</button>
+          <button class="text-zinc-500 font-bold text-sm tracking-wide hover:text-white transition-colors">New
+            Releases</button>
+          <button class="text-zinc-500 font-bold text-sm tracking-wide hover:text-white transition-colors">Top
+            Rated</button>
+        </div>
+      </div>
+    </section>
+    <!-- Continue Watching -->
+    <section class="px-12 mb-16">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="font-headline font-bold text-xl text-white">Continue Watching</h3>
+        <button
+          class="text-zinc-500 text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">View
+          All</button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="group relative aspect-video rounded-xl overflow-hidden bg-surface-container cursor-pointer">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            data-alt="Atmospheric movie still of a detective standing in a foggy street with orange streetlights casting long shadows"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvy90Pi4oIsjgigJ0_fYVVGyMGf0U4fsiaGOytKv118S8tJEkiHznzaa9W2-CUVk2O57RzbTvTbvDrWuB8qQbrB7_96U5ymDDpPJapy7QcZJwtLYSMrnFq4Ed0mJByzmld4rIr4hq7_GIdxnhGGMHX_uZjpP6F7eTJck8MiV04zhr27x9kMwe-jAQoPYqkMqB_mhFTiGTbgpNvDKUCL4ZnHCpdmL0G2sL5iH4aaZ51up2Uo_09WHY_pMpIKxAXoF3BRacRu4OQl9I" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <h4 class="text-white font-bold text-sm mb-1 group-hover:text-primary transition-colors">The Void Runner
+            </h4>
+            <p class="text-zinc-400 text-[10px] uppercase tracking-widest font-bold">S2 : E04 • 12m Left</p>
+          </div>
+          <!-- Progress Bar -->
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-zinc-800">
+            <div class="h-full bg-primary-dim w-[65%] glow-primary"></div>
+          </div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="w-12 h-12 bg-primary-dim rounded-full flex items-center justify-center glow-primary">
+              <span class="material-symbols-outlined text-white"
+                style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="group relative aspect-video rounded-xl overflow-hidden bg-surface-container cursor-pointer">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            data-alt="Abstract cinematic background with swirling deep red and black smoke textures and soft light flares"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqkTuWslDU87furG1Ylu15UTUSQQneJbfgKBSNhFMvrigPYLxwzDVp8z8FnXd-tLN4PFlY0qNn-r-upyeli2jNEKIwD7VxCPfg3lTGgEMNDTUzqBz8Frolu4syWKlMQHeehm7jSGRdXMrkMhFaZr68SOwJtbOEQnzbWn1qXxNDU-yO749zqf3JMgObMZ5-qPPuXPOcHNTwXo-qpdneCj8kAxWf7_tPhiYOcNEC-tpqklJApLCot7tPg4J1P_bg98pVSrVHVhKotTY" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <h4 class="text-white font-bold text-sm mb-1 group-hover:text-primary transition-colors">Echoes of Silence
+            </h4>
+            <p class="text-zinc-400 text-[10px] uppercase tracking-widest font-bold">S1 : E12 • 45m Left</p>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-zinc-800">
+            <div class="h-full bg-primary-dim w-[20%] glow-primary"></div>
+          </div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="w-12 h-12 bg-primary-dim rounded-full flex items-center justify-center glow-primary">
+              <span class="material-symbols-outlined text-white"
+                style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="group relative aspect-video rounded-xl overflow-hidden bg-surface-container cursor-pointer">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            data-alt="Breathtaking view of the cosmos with vibrant purple and blue nebulas and distant bright stars"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkpK4jVqw_7JHl5jUYD6H0ObRhsXi90h6YajZmgkY2XopEFfvAot18MNUel8vVmT7oGNFUh70IU7-fB0HtEkbouwu5_XvHEPoqN4XFXMfuaYBHUPqqJYNDUA11DB0GxQ0zLLGqe6M4RocQUE5iKsJEEOcjPlYO3VKfSOhav8U7mlu7oALmDJUO4Or3LD-m5TPP7mqrTO4MjbAWITpLolhzlsPftg13r5EMOfZTv2-FJYEwl3hOBncpJ5JenzgwLBPsV0GwSMR9Cqg" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <h4 class="text-white font-bold text-sm mb-1 group-hover:text-primary transition-colors">Starbound Saga</h4>
+            <p class="text-zinc-400 text-[10px] uppercase tracking-widest font-bold">S4 : E01 • 5m Left</p>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-zinc-800">
+            <div class="h-full bg-primary-dim w-[90%] glow-primary"></div>
+          </div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="w-12 h-12 bg-primary-dim rounded-full flex items-center justify-center glow-primary">
+              <span class="material-symbols-outlined text-white"
+                style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="group relative aspect-video rounded-xl overflow-hidden bg-surface-container cursor-pointer">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            data-alt="Close-up of a vintage film reel spinning in dramatic lighting with dust particles visible in the light beam"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuCVf5Lbwcs8Ng_5ye8ZEEn6BvZqMwfIXnKUSR0eSbvlBCY_zQY_p8LTL83T5ljz5MRphqajd0sXHq2mkbx8kxmFc9UknJAlG1hzDlMkjDJdVBZpC14zBYPWwwgnHcm_vigGrdBZoUU2ZQYUr_hHfT9Y4CPODU62YBkLS1ivrQX3bJ53G0_xF1tOuavdpS8kDi3sEVJtmf3iCyUO9tswfHmXUh6iYU4_YnI4_1bypQkCcMhTKjQKHnVPLqjfCFweq8VSO-v3j-5Y8" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <h4 class="text-white font-bold text-sm mb-1 group-hover:text-primary transition-colors">Noir Archives</h4>
+            <p class="text-zinc-400 text-[10px] uppercase tracking-widest font-bold">S1 : E03 • 22m Left</p>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-zinc-800">
+            <div class="h-full bg-primary-dim w-[45%] glow-primary"></div>
+          </div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="w-12 h-12 bg-primary-dim rounded-full flex items-center justify-center glow-primary">
+              <span class="material-symbols-outlined text-white"
+                style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Recommended Series -->
+    <section class="px-12 mb-16">
+      <div class="flex items-center justify-between mb-8">
+        <h3 class="font-headline font-bold text-xl text-white">Recommended Series</h3>
+        <div class="flex items-center space-x-2">
+          <button class="p-2 rounded-full border border-white/10 text-zinc-400 hover:text-white transition-colors">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button class="p-2 rounded-full border border-white/10 text-zinc-400 hover:text-white transition-colors">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <!-- Poster 1 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-[2/3] rounded-xl overflow-hidden mb-4 shadow-xl">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Dramatic vertical poster featuring a shadowy figure in a high-tech armor suit standing amidst industrial ruins"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh83IBhPss26HBEP2DUYRSGnTSSnoarjetYi9DKzR0YfRk49I5C1Z3Idjo8XL0lAgceMmxeNKraiXl5-iMTpQZmGcmHAfofaSS9tCPexHrjMLsL7gwz1wxjyd_Ly2052YT_6wOX2GcgmQ9it0udqa4Y737X-uVExt3Y90sjudL8Z2NqG4LozwmA5zj_V8iU9YKC31sHZNVOc4JW2CWVb-XymleDrNqPzP7k_AMCN8sKPdCYLSchuoREoXKMU1HF-xDESdTn3D0G_M" />
+            <div
+              class="absolute top-3 right-3 bg-zinc-950/80 backdrop-blur-md px-2 py-1 rounded-full flex items-center space-x-1">
+              <span class="material-symbols-outlined text-primary-dim text-xs"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-white text-[10px] font-bold">4.9</span>
+            </div>
+          </div>
+          <h4 class="text-white font-bold text-base mb-1 group-hover:text-primary transition-colors">Iron Protocol</h4>
+          <p class="text-zinc-500 text-[10px] uppercase tracking-widest font-extrabold">SCI-FI • THRILLER</p>
+        </div>
+        <!-- Poster 2 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-[2/3] rounded-xl overflow-hidden mb-4 shadow-xl">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Cinematic vertical poster of a minimalist staircase disappearing into white light with deep shadows on the sides"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIRQLLk5eCE6dvqblPNQ-0iChNpTyqtoX4_sqj36Mk-MYL7C4PIDCT0w3genuAe1I9eSUG5H3m4CCDgTe0ulAFEs8Qohksvm6rrc4bBgVwzfF9zmsfqtg-pNXYwlIaJL-BPWr1yGhppyRJJ-7C-L87V3W-RD71ARoU9YGu7csGEsWhlWGDdzJ1Hy0LN21EIIZYfXkwgSkW5kOIShk8VGl69dxFVfOT4camklNhP9_C_BJnWvPXvVLD70NcOZWKdWQDLRmuJI1S9ik" />
+            <div
+              class="absolute top-3 right-3 bg-zinc-950/80 backdrop-blur-md px-2 py-1 rounded-full flex items-center space-x-1">
+              <span class="material-symbols-outlined text-primary-dim text-xs"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-white text-[10px] font-bold">4.7</span>
+            </div>
+          </div>
+          <h4 class="text-white font-bold text-base mb-1 group-hover:text-primary transition-colors">The Ascent</h4>
+          <p class="text-zinc-500 text-[10px] uppercase tracking-widest font-extrabold">DRAMA • MYSTERY</p>
+        </div>
+        <!-- Poster 3 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-[2/3] rounded-xl overflow-hidden mb-4 shadow-xl">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Vertical poster of a dense dark forest at night with a single bright light beam shining down through the trees"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoz7nMkS8HbTVEiqSQmoSIojKgPue6aXOZklANYqL8JK_93zGe208UXYhuhp1Zatbmj3yqNmR1RcLReHRTGnvs8apSlHPZCcmv948PQrb5FeXuMRvpk1LJjXaDqmRPgAgBlEMgQAPvu9GqU1vYstskbrAFBlzOwEaq1tnYWdvSuKuM_xAnpz6rP8IvsvjbhPMDDja6kRx9sQmDcKTEleeAnQYioUujfF5rYq7UfeQpSpRRNer8loiMrZaFWYeu_zVrTp5uPdEStt0" />
+            <div
+              class="absolute top-3 right-3 bg-zinc-950/80 backdrop-blur-md px-2 py-1 rounded-full flex items-center space-x-1">
+              <span class="material-symbols-outlined text-primary-dim text-xs"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-white text-[10px] font-bold">4.8</span>
+            </div>
+          </div>
+          <h4 class="text-white font-bold text-base mb-1 group-hover:text-primary transition-colors">Shadow Wood</h4>
+          <p class="text-zinc-500 text-[10px] uppercase tracking-widest font-extrabold">HORROR • THRILLER</p>
+        </div>
+        <!-- Poster 4 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-[2/3] rounded-xl overflow-hidden mb-4 shadow-xl">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Vertical movie poster of a silhouette of a person standing on a ledge looking out over a foggy mountain range"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTyw_wS7rWysVL5DHziVM-lmRpAEsVzUUSLZg-mqLBH2D3jzpWd6pOTej4PzaHKQaUNsDiKjQVaa0FGKdUxCLNWOg8CB4XT35PKJtE-CDTeK6eEVRcwAVGUhqMh9jsB4TUtn247tRUzOe01x2jdlbNkVIwaXNUOOjO8DZhcz-jnFLWiyC7_wIewVjJikzMxlo8bDxxbf4z8z0KvRktpKDfkPVbEh6XbG3L_CxKigb46aWcXDF51B5JVod5oQxtapm7MiV9LGKv79U" />
+            <div
+              class="absolute top-3 right-3 bg-zinc-950/80 backdrop-blur-md px-2 py-1 rounded-full flex items-center space-x-1">
+              <span class="material-symbols-outlined text-primary-dim text-xs"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-white text-[10px] font-bold">4.5</span>
+            </div>
+          </div>
+          <h4 class="text-white font-bold text-base mb-1 group-hover:text-primary transition-colors">Horizon Point</h4>
+          <p class="text-zinc-500 text-[10px] uppercase tracking-widest font-extrabold">ADVENTURE • DRAMA</p>
+        </div>
+        <!-- Poster 5 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-[2/3] rounded-xl overflow-hidden mb-4 shadow-xl">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Vertical poster with abstract vibrant flowing ribbons of neon light in a dark void space"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq4eIcKCsCNO-O63pUXP0pvd8i0Cknk5QsZtpw80FGl2vLmMer4QrVz6ZQ8sHSBLT0j_odWE_jBHjMuK9DCrXZ-SyHhgbV-9PkE9YKGtZIfErBSZgXTXYB4sjUoj7q3a9OszvMDHfqaWg4Macnjp3c6pgxSf7SA__L_yJ6KQNl9GisiRa_wqt7FfQUGGYQBmXKP9qR-f9VACUKF36AXfSX6BOcGUkrayJRGKto3ooCePiNQf3DgK3sgGLtUW84_CUrrVNP0UoM6rw" />
+            <div
+              class="absolute top-3 right-3 bg-zinc-950/80 backdrop-blur-md px-2 py-1 rounded-full flex items-center space-x-1">
+              <span class="material-symbols-outlined text-primary-dim text-xs"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-white text-[10px] font-bold">4.9</span>
+            </div>
+          </div>
+          <h4 class="text-white font-bold text-base mb-1 group-hover:text-primary transition-colors">Glitch Theory</h4>
+          <p class="text-zinc-500 text-[10px] uppercase tracking-widest font-extrabold">SCI-FI • CYBERPUNK</p>
+        </div>
+      </div>
+    </section>
+    <!-- Recently Added Episodes -->
+    <section class="px-12 mb-12">
+      <h3 class="font-headline font-bold text-xl text-white mb-8">Recently Added Episodes</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <!-- Thumbnail 1 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-video rounded-lg overflow-hidden mb-2">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Action shot of a sleek black sports car racing through a tunnel with streaking lights on the walls"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnMhMudG1K6JUNLPIojAgvZjLHG8oG117KfGhfaeaGP6N0IsSh9P-IDLFn3YxtyVpbocwhibWr0gWD9u1Uwe39Fku7gfD3kzgdnt8c39p6_Ge1yy5ga8Q1FC6Z-eIg2X3xLjoY3xyKbizXnLwpQVQAwMmbz_sVbGhcvnplFN22u-_LsvevLhKBdJerc1Kk3YbQ0GR3f6zyVRjgIQuGtuxe70-n9oZ6CT26n5xEeEBVGS1mEyeXHiCQi5Gl4vIsWyzmQv6NGVt2bPw" />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="material-symbols-outlined text-white text-3xl">play_circle</span>
+            </div>
+          </div>
+          <p class="text-white font-bold text-xs truncate">Velocity: High Stakes</p>
+          <p class="text-zinc-500 text-[9px] uppercase tracking-wider">New Episode Added</p>
+        </div>
+        <!-- Thumbnail 2 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-video rounded-lg overflow-hidden mb-2">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Macro photo of a glowing microchip circuit board with electric blue pulses of light"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9SFvkhcOiyB2ersRBoLMsL0QyfDwGigj9HFXHCG3BqR38GDi0Yv6_cLueArJSisEeB2TzTnjAiOh4Cqh2YM_m2AwU7FFt6VZyAvFRpPlBrm0bGgqWyVDEuP9q9N3HveGFrIdDHxPM_QLpgHK-3pjNaKbUhVzRLAuMRtuRJnG0JkezRrmcjmKqSPADllLtVDIWOB4QO1P9YX8nxNouySarezN84qwWoVCHQKn9AOfgC206_7uco7BwDFb1u8febD9M1EKbAt3ziLw" />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="material-symbols-outlined text-white text-3xl">play_circle</span>
+            </div>
+          </div>
+          <p class="text-white font-bold text-xs truncate">The Binary Soul</p>
+          <p class="text-zinc-500 text-[9px] uppercase tracking-wider">Episode 08 Added</p>
+        </div>
+        <!-- Thumbnail 3 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-video rounded-lg overflow-hidden mb-2">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Atmospheric landscape of a dark mountain silhouette under a clear starry night sky with a green aurora borealis"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKOAcdwkGJvyBAXFhJyF-AZnKhjC4fO9Rr6HOtTxiXKdwcL36UKaj1Cxu0UQm4o76xOQZPWVTwuqI5Mw_OhmEc13qiT8Lk9nbv3pHgDbvdf68A9MKk4spXxsQF44c27CzNm6id1c22NXqHJ9dKlTHIIAB-rPEb56rVd3MKhxTzJ9ltWX2qmheZGJMaLuSb1CWeoeeNY_y2f_DuNSlPaQ7NeNcG3Y4r6MY7O0caRtxXYa_ue6PK2b07cc_06s4LzzSWOykH6HNXFXU" />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="material-symbols-outlined text-white text-3xl">play_circle</span>
+            </div>
+          </div>
+          <p class="text-white font-bold text-xs truncate">Peak of Shadows</p>
+          <p class="text-zinc-500 text-[9px] uppercase tracking-wider">Season Finale Added</p>
+        </div>
+        <!-- Thumbnail 4 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-video rounded-lg overflow-hidden mb-2">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Close-up of a high-tech camera lens reflecting a city skyline at dusk with warm sunset colors"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnytJqUEZiEqhoJ00AieeGYuQfEdr0DAN8vUUE5qSQB98MNwUzwu6dylnDlMTG4H0ppNZCpVVIvyzLiQZJQOwXdpmQtYdqtbF9ZEHIVagEaurQ9MRbNH42aOxz8FQ1_EB1QubuxzrVyWGQb0OZdC6gVOZMxVQwBnnhmxnPbeaTHvU0iI53hZq7K9rB9xFk1ssM4-CDEghWsrXL53GWpCv03zSHeEXMZi6eHWFzOMixo3S7VS-fQJLHU2ovJh8Vowh2N4H_Zja64EU" />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="material-symbols-outlined text-white text-3xl">play_circle</span>
+            </div>
+          </div>
+          <p class="text-white font-bold text-xs truncate">Through the Lens</p>
+          <p class="text-zinc-500 text-[9px] uppercase tracking-wider">New Episode Added</p>
+        </div>
+        <!-- Thumbnail 5 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-video rounded-lg overflow-hidden mb-2">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Inside of a modern futuristic architectural building with white curved walls and geometric patterns of shadows"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs-ZFRrYyh23LlLy7S2oeHn0FSaRbl_MuR5jOwMekt6_qbwliMu1DNshaZHqwM6joG4dekJctyq8BaiHn2OUYaFOlm88OWOdbpX0hh_1G7dbdWyEJuQ5mFJSMvm04ni5Sb_tg74GqCATvj2M1VHsouO2CzGDDLriobmNUEHGa0edj4WV54DZjCPl6cTh0xN83iFlEPMAD5V86QFNjFVj-_yRcIm3P5Rcq1XSn4G88R-9BcnrAyB0jwizcxJmNpaI-CTcWzJnTbd54" />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="material-symbols-outlined text-white text-3xl">play_circle</span>
+            </div>
+          </div>
+          <p class="text-white font-bold text-xs truncate">Structure of Mind</p>
+          <p class="text-zinc-500 text-[9px] uppercase tracking-wider">Episode 03 Added</p>
+        </div>
+        <!-- Thumbnail 6 -->
+        <div class="group cursor-pointer">
+          <div class="relative aspect-video rounded-lg overflow-hidden mb-2">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Ocean waves crashing against dark rocks at night with bioluminescent glowing blue edges in the water"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIVNN0lw6IA5PBfJf9iTKORpyEzrRBReVaXMl5nuPLMe3qwkBMyAJ3Jw3AjAYd9S5NMIYPnGlpZQQoTe7572n9fy5uPIGUavsWWCPnkAwJjbcGdgAe8bWeNBdDsvflcefkk93cCNPAVZC4AJg6sutV37Zlc-wsTXGRA5iu85td5eZJymcwQFMaubG6CglDCkOEi5aLP_4pNjCLriZjtsgWGAAbGzMdga72yODuUq6kZ-UzVmnpJbSJVnJyZa1JGlesR2DE4p5vCSo" />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="material-symbols-outlined text-white text-3xl">play_circle</span>
+            </div>
+          </div>
+          <p class="text-white font-bold text-xs truncate">Biolume Nights</p>
+          <p class="text-zinc-500 text-[9px] uppercase tracking-wider">Episode 05 Added</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Bottom Shell (Mobile Only) -->
+  <nav
+    class="md:hidden fixed bottom-0 w-full bg-zinc-950/80 backdrop-blur-2xl px-6 py-4 flex justify-between items-center z-50">
+    <button class="text-zinc-400 flex flex-col items-center">
+      <span class="material-symbols-outlined">home</span>
+      <span class="text-[10px] uppercase font-bold mt-1">Home</span>
+    </button>
+    <button class="text-primary-dim flex flex-col items-center">
+      <span class="material-symbols-outlined">tv</span>
+      <span class="text-[10px] uppercase font-bold mt-1">Series</span>
+    </button>
+    <button class="text-zinc-400 flex flex-col items-center">
+      <span class="material-symbols-outlined">movie</span>
+      <span class="text-[10px] uppercase font-bold mt-1">Movies</span>
+    </button>
+    <button class="text-zinc-400 flex flex-col items-center">
+      <span class="material-symbols-outlined">bookmark</span>
+      <span class="text-[10px] uppercase font-bold mt-1">List</span>
+    </button>
+  </nav>
+</body>
+
+</html>
